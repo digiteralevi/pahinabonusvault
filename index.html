@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pahina Bonus Vault</title>
+<meta name="description" content="Your Pahina Builder bonuses: Funnel Builder Playbook, Client-Getting Script Pack, Ready-Made Portfolio Pack and Niche Brief Swipe File.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0C10;--bg2:#111318;--card:#15171D;--card2:#1B1E26;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.13);
+  --ink:#ECEDF1;--mute:#9298A6;--dim:#5F6573;--acc:#7C74F0;--acc2:#A9A3F7;--accbg:rgba(124,116,240,.12);--accline:rgba(124,116,240,.38);
+  --ok:#3CCB8B;--okbg:rgba(60,203,139,.12);--warn:#F5B942;--warnbg:rgba(245,185,66,.1);
+  --r:14px;--ease:cubic-bezier(.16,1,.3,1);--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 20px 50px -20px rgba(0,0,0,.6);
+  --serif:'Instrument Serif',Georgia,serif;--sans:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+:root[data-theme="light"]{
+  --bg:#F6F6F9;--bg2:#FFFFFF;--card:#FFFFFF;--card2:#F2F2F7;--line:rgba(16,18,27,.08);--line2:rgba(16,18,27,.14);
+  --ink:#14151B;--mute:#5D6270;--dim:#9AA0AD;--acc:#5B52E0;--acc2:#5B52E0;--accbg:rgba(91,82,224,.08);--accline:rgba(91,82,224,.35);
+  --ok:#14955F;--okbg:rgba(20,149,95,.09);--warn:#B7791F;--warnbg:rgba(183,121,31,.08);--shadow:0 1px 2px rgba(16,18,27,.05),0 12px 32px -16px rgba(16,18,27,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--acc2)}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--accbg)}
+.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);opacity:.55}
+.app{position:relative;z-index:1;display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh}
+/* sidebar */
+.side{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:22px 16px;display:flex;flex-direction:column;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;padding:0 6px;text-decoration:none;color:var(--ink)}
+.logo-mark{flex:none;width:34px;height:34px;border-radius:10px;background:var(--acc);display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.04em}
+.logo b{display:block;font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.logo>span:last-child>span{display:block;font-size:11px;color:var(--mute)}
+.nav{display:flex;flex-direction:column;gap:3px}
+.nav a{display:flex;align-items:center;gap:11px;padding:10px 10px;border-radius:10px;color:var(--mute);text-decoration:none;font-size:13.5px;font-weight:500;transition:background .2s,color .2s}
+.nav a svg{width:18px;height:18px;flex:none}
+.nav a:hover{color:var(--ink);background:var(--card2)}
+.nav a.on{color:var(--ink);background:var(--accbg);box-shadow:inset 0 0 0 1px var(--accline)}
+.nav a.on svg{color:var(--acc2)}
+.nav .n{margin-left:auto;font:500 10.5px var(--mono);color:var(--dim)}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.prog-top{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mute);margin-bottom:8px}
+.prog-top b{color:var(--ink);font-weight:600}
+.bar{height:6px;border-radius:99px;background:var(--card2);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:99px;transition:width .8s var(--ease)}
+.theme{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:var(--mute);padding:4px 6px}
+.tgl{width:40px;height:22px;border-radius:99px;border:1px solid var(--line2);background:var(--card2);position:relative;cursor:pointer;padding:0}
+.tgl::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--ink);transition:transform .3s var(--ease)}
+:root[data-theme="light"] .tgl::after{transform:translateX(18px)}
+/* topbar (mobile) */
+.top{display:none}
+main{min-width:0;padding:40px clamp(18px,4vw,56px) 100px}
+.view{display:none;max-width:1080px;margin:0 auto}
+.view.on{display:block;animation:viewIn .6s var(--ease)}
+@keyframes viewIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* type */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--acc2);padding:5px 10px;border-radius:99px;background:var(--accbg);border:1px solid var(--accline)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc2);box-shadow:0 0 0 0 var(--acc2);animation:ping 2.4s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc2) 60%,transparent)}80%,100%{box-shadow:0 0 0 8px transparent}}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:18px 0 14px}
+h2{font-size:clamp(22px,3vw,30px);line-height:1.15;letter-spacing:-.025em;font-weight:700;margin:0 0 8px}
+h3{font-size:16px;letter-spacing:-.01em;font-weight:600;margin:0 0 6px}
+em.s{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--acc2);letter-spacing:-.01em;font-size:1.1em}
+.lead{font-size:17px;color:var(--mute);max-width:640px;margin:0}
+.sub{color:var(--mute);margin:0 0 22px;max-width:680px}
+.sec{margin-top:56px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.kicker{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;display:block}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);position:relative}
+.cards{display:grid;gap:14px}
+.c2{grid-template-columns:repeat(2,minmax(0,1fr))}.c3{grid-template-columns:repeat(3,minmax(0,1fr))}.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lift{transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.lift:hover{transform:translateY(-3px);border-color:var(--accline)}
+.ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--accbg);color:var(--acc2);border:1px solid var(--accline);margin-bottom:14px}
+.ico svg{width:20px;height:20px}
+.muted{color:var(--mute)}.small{font-size:13px}.tiny{font-size:12px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:99px;background:var(--card2);color:var(--mute);border:1px solid var(--line)}
+.pill.ok{background:var(--okbg);color:var(--ok);border-color:transparent}
+.pill.acc{background:var(--accbg);color:var(--acc2);border-color:var(--accline)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:11px;border:1px solid var(--line2);background:var(--card2);color:var(--ink);font-weight:600;font-size:13.5px;cursor:pointer;text-decoration:none;transition:transform .2s var(--ease),background .2s,border-color .2s}
+.btn:hover{border-color:var(--accline)}
+.btn:active{transform:scale(.97)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 8px 24px -10px var(--acc)}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn.sm{min-height:34px;padding:0 12px;font-size:12.5px;border-radius:9px}
+.btn svg{width:16px;height:16px}
+.btn.copied{background:var(--okbg);border-color:transparent;color:var(--ok)}
+/* inputs */
+.inp,select.inp,textarea.inp{width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.inp:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--accbg)}
+label.l{display:block;font-size:12px;font-weight:600;color:var(--mute);margin:0 0 6px}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.seg{display:inline-flex;padding:3px;border-radius:11px;background:var(--card2);border:1px solid var(--line);gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;padding:7px 13px;border-radius:8px;font-size:12.5px;font-weight:600;color:var(--mute);cursor:pointer;transition:background .2s,color .2s}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.25),inset 0 0 0 1px var(--line2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line2);background:transparent;color:var(--mute);padding:6px 12px;border-radius:99px;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--ink)}
+.chip.on{background:var(--accbg);color:var(--acc2);border-color:var(--accline)}
+/* checklist */
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);cursor:pointer;transition:border-color .2s,background .2s;user-select:none}
+.chk+.chk{margin-top:8px}
+.chk:hover{border-color:var(--line2)}
+.chk .box{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line2);display:grid;place-items:center;margin-top:1px;transition:all .25s var(--ease)}
+.chk .box svg{width:13px;height:13px;color:#fff;opacity:0;transform:scale(.5);transition:all .25s var(--ease)}
+.chk.done{background:var(--okbg);border-color:transparent}
+.chk.done .box{background:var(--ok);border-color:var(--ok)}
+.chk.done .box svg{opacity:1;transform:none}
+.chk.done .t{color:var(--mute);text-decoration:line-through;text-decoration-color:var(--dim)}
+.chk .t{font-size:14px;font-weight:500}
+.chk .d{font-size:12.5px;color:var(--mute);margin-top:2px}
+/* code/script block */
+.script{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;white-space:pre-wrap;font-size:14px;line-height:1.7;position:relative}
+.script mark{background:var(--accbg);color:var(--acc2);border-radius:4px;padding:0 3px}
+.script mark.f{background:var(--okbg);color:var(--ok)}
+/* accordion */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+.acc+.acc{margin-top:10px}
+.acc-h{width:100%;display:flex;align-items:center;gap:14px;padding:18px 20px;background:transparent;border:0;cursor:pointer;text-align:left}
+.acc-h .num{font:500 12px var(--mono);color:var(--acc2);width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--accbg);flex:none}
+.acc-h b{font-size:15.5px;font-weight:600;letter-spacing:-.01em;display:block}
+.acc-h span.s2{font-size:12.5px;color:var(--mute)}
+.acc-h .chev{margin-left:auto;width:18px;height:18px;color:var(--mute);transition:transform .35s var(--ease);flex:none}
+.acc.open .acc-h .chev{transform:rotate(180deg)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.acc.open .acc-b{grid-template-rows:1fr}
+.acc-b>div{overflow:hidden}
+.acc-in{padding:4px 20px 22px}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;font-weight:600;color:var(--mute);font-size:12px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+/* stat */
+.stat b{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.stat span{font-size:12px;color:var(--mute)}
+.big-num{font-size:clamp(34px,5vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+/* toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;z-index:100;transition:all .35s var(--ease);pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* home hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center}
+.orbit{position:relative;aspect-ratio:1;max-width:380px;margin-left:auto;width:100%}
+.orbit .ring{position:absolute;inset:0;border:1px dashed var(--line2);border-radius:50%;animation:spin 60s linear infinite}
+.orbit .ring.r2{inset:16%;animation-duration:40s;animation-direction:reverse}
+.orbit .ring.r3{inset:32%;border-style:solid;border-color:var(--accline)}
+.orbit .core{position:absolute;inset:40%;border-radius:24px;background:var(--acc);display:grid;place-items:center;color:#fff;font-weight:800;font-size:22px;letter-spacing:-.04em;box-shadow:0 0 0 10px var(--accbg),0 30px 60px -20px var(--acc)}
+.orbit .sat{position:absolute;width:52px;height:52px;margin:-26px;border-radius:14px;background:var(--card);border:1px solid var(--line2);display:grid;place-items:center;color:var(--acc2);box-shadow:var(--shadow)}
+.orbit .sat svg{width:22px;height:22px}
+.orbit .spin{position:absolute;inset:0;animation:spin 60s linear infinite}
+.orbit .spin .sat{animation:spin 60s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.vcard{display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer}
+.vcard .val{font:500 11.5px var(--mono);color:var(--dim)}
+.vcard .val s{color:var(--dim)}
+.vcard .go{margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:600;color:var(--acc2)}
+.vcard .go svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.vcard:hover .go svg{transform:translateX(4px)}
+.path-step{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px}
+@media (max-width:980px){
+  .app{grid-template-columns:1fr}
+  .side{display:none}
+  .top{display:flex;position:sticky;top:0;z-index:30;align-items:center;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .top .logo{padding:0}
+  .top .tgl{margin-left:auto}
+  .tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);position:sticky;top:59px;z-index:29;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{flex:none;font-size:12.5px;font-weight:600;color:var(--mute);text-decoration:none;padding:7px 12px;border-radius:99px;border:1px solid var(--line)}
+  .tabs a.on{color:var(--acc2);background:var(--accbg);border-color:var(--accline)}
+  main{padding:26px 16px 80px}
+  .hero{grid-template-columns:1fr}
+  .orbit{max-width:260px;margin:0 auto}
+  .c3,.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:981px){.tabs{display:none}}
+@media (max-width:620px){.c2,.c3,.c4{grid-template-columns:1fr}.card{padding:18px}h1{margin-top:14px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* bonus specific styles get appended below */
+.pb-niche{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;cursor:pointer;font:inherit;color:inherit;width:100%}
+.pb-niche.sel{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset,var(--shadow)}
+.pb-niche h3{font-size:15px}
+.pb-tier{display:flex;flex-direction:column;gap:2px}
+.pb-tier.feat{border-color:var(--accline)}
+.pb-tname{background:transparent;border:0;border-bottom:1px dashed var(--line2);font-size:16px;font-weight:600;padding:2px 0 6px;outline:none;width:100%;letter-spacing:-.01em}
+.pb-tname:focus{border-bottom-color:var(--acc)}
+.pb-price{font-size:36px;font-weight:700;letter-spacing:-.04em;margin-top:12px;line-height:1.1}
+.bump{animation:bump .45s var(--ease)}
+@keyframes bump{40%{transform:scale(1.06);color:var(--acc2)}}
+.pb-del{display:flex;gap:10px;align-items:flex-start;text-align:left;background:transparent;border:0;padding:7px 0;cursor:pointer;font-size:13px;color:var(--dim);width:100%;line-height:1.45}
+.pb-del .box{flex:none;width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line2);display:grid;place-items:center;margin-top:1px;transition:all .2s}
+.pb-del .box svg{width:12px;height:12px;color:#fff;opacity:0}
+.pb-del.on{color:var(--ink)}
+.pb-del.on .box{background:var(--acc);border-color:var(--acc)}
+.pb-del.on .box svg{opacity:1}
+.pb-sl{margin-top:16px}
+.pb-sl label{display:flex;justify-content:space-between;gap:10px}
+.pb-sl label b{color:var(--ink);font-family:var(--mono);font-weight:500}
+.pb-out{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.pb-time{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-bottom:18px;position:relative}
+.pb-time::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:var(--line2)}
+.pb-tl{position:relative;padding-top:22px}
+.pb-dot{position:absolute;top:0;left:0;width:11px;height:11px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--accbg)}
+.pb-tl h3{font-size:14px}
+.sc-list{display:grid;gap:12px}
+.sc-item h3{font-size:16px}
+.sc-count .big-num{margin-top:4px}
+.pf-thumb{position:relative;aspect-ratio:16/11;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--card2)}
+.pf-thumb iframe{position:absolute;top:0;left:0;width:1280px;height:880px;border:0;transform-origin:0 0;pointer-events:none}
+.pf-open{position:absolute;inset:0;background:transparent;border:0;cursor:pointer}
+.pf-feats{list-style:none;padding:0;margin:10px 0 16px;display:grid;gap:6px}
+.pf-feats li{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--mute)}
+.pf-feats svg{width:15px;height:15px;color:var(--ok);flex:none}
+.pf-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.pf-card{display:flex;flex-direction:column}
+.pf-tip{display:flex;flex-direction:column;justify-content:center}
+.pf-ol{margin:8px 0 0;padding-left:20px;display:grid;gap:8px;font-size:14px;color:var(--mute)}
+.pf-ol b{color:var(--ink)}
+.pf-modal{position:fixed;inset:0;z-index:60;background:rgba(5,6,10,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;flex-direction:column}
+.pf-modal.on{display:flex;animation:viewIn .4s var(--ease)}
+.pf-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pf-bar b{margin-right:auto;font-size:14px}
+.pf-stage{flex:1;min-height:0;display:grid;place-items:center;padding:16px}
+.pf-frame{width:100%;height:100%;max-width:1280px;border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#fff;transition:max-width .5s var(--ease),border-radius .5s}
+.pf-frame.m{max-width:390px;border-radius:32px;border-width:8px;border-color:#22242C}
+.pf-frame iframe{width:100%;height:100%;border:0;display:block}
+body.presenting .app,body.presenting .top,body.presenting .tabs,body.presenting .grid-bg{display:none!important}
+#present-frame{display:none}
+body.presenting #present-frame{display:block;position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff;z-index:90}
+.br-tools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.br-search{position:relative;flex:1;min-width:240px;max-width:380px}
+.br-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--mute)}
+.br-search .inp{padding-left:36px}
+.br-list{display:grid;gap:10px}
+.br-head{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.br-actions{display:flex;gap:6px;flex-wrap:wrap}
+.br-item.open{border-color:var(--accline)}
+.br-body{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;animation:viewIn .4s var(--ease)}
+.br-body>div:last-child{grid-column:1/-1}
+.br-f{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.br-fl{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.br-fl span{font:500 10.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.br-fl .btn{min-height:28px;padding:0 9px;font-size:11.5px}
+.br-fv{font-size:13.5px;white-space:pre-wrap;line-height:1.6}
+@media (max-width:980px){.pb-time{grid-template-columns:repeat(2,minmax(0,1fr))}.pb-time::before{display:none}}
+@media (max-width:620px){.br-body{grid-template-columns:1fr}.pb-time{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="top">
+  <a class="logo" href="#home"><span class="logo-mark">PB</span><span><b>Bonus Vault</b><span data-product>Pahina Builder</span></span></a>
+  <button class="tgl" type="button" aria-label="Switch light or dark mode" data-theme-toggle></button>
+</div>
+<nav class="tabs" id="tabs" aria-label="Bonuses"></nav>
+<div class="app">
+  <aside class="side">
+    <a class="logo" href="#home"><span class="logo-mark">PB</span><span><b>Bonus Vault</b><span data-product>Pahina Builder</span></span></a>
+    <nav class="nav" id="nav" aria-label="Bonuses"></nav>
+    <div class="side-foot">
+      <div class="prog"><div class="prog-top"><span>Your launch path</span><b id="prog-pct">0%</b></div><div class="bar"><i id="prog-bar"></i></div></div>
+      <div class="theme"><span>Light mode</span><button class="tgl" type="button" aria-label="Switch light or dark mode" data-theme-toggle></button></div>
+    </div>
+  </aside>
+  <main id="main">
+    <section class="view" id="v-home"></section>
+    <section class="view" id="v-playbook"></section>
+    <section class="view" id="v-scripts"></section>
+    <section class="view" id="v-portfolio"></section>
+    <section class="view" id="v-briefs"></section>
+
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+/* ===== Pahina Bonus Vault — core ===== */
+/* The app sends ?app=builder or ?app=suite so "Send to Pahina" opens the edition the buyer owns. */
+var EDITION = (function () {
+  var e = ''; try { e = (new URLSearchParams(location.search).get('app') || '').toLowerCase(); } catch (x) {}
+  if (e === 'builder' || e === 'suite') { try { localStorage.setItem('pbv_edition', e); } catch (x) {} return e; }
+  try { e = localStorage.getItem('pbv_edition') || ''; } catch (x) {}
+  return e === 'builder' ? 'builder' : 'suite';
+})();
+var PAHINA_APP_URL = EDITION === 'builder' ? 'https://pahinabuilder.vercel.app/' : 'https://pahinabuilder-suite.vercel.app/';
+var PRODUCT_NAME = EDITION === 'builder' ? 'Pahina Builder' : 'Pahina Builder Suite';
+document.addEventListener('DOMContentLoaded', function () { $$('[data-product]').forEach(function (e) { e.textContent = PRODUCT_NAME; }); });
+var IC = {
+  home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  book:'<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5"/><path d="M8 7h7M8 11h5"/>',
+  chat:'<path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/><path d="M8.5 11h7M8.5 14h4"/>',
+  layout:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
+  file:'<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/>',
+  chev:'<path d="M6 9l6 6 6-6"/>',
+  target:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6"/>',
+  layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  calc:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
+  clip:'<path d="M9 4h6v3H9z"/><path d="M15 5h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"/><path d="M9 13l2 2 4-4"/>',
+  shield:'<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+  send:'<path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+  monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+  spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+  bolt:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/>',
+  ext:'<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  money:'<rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9.5v.01M18 14.5v.01"/>',
+  star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+  flag:'<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>'
+};
+function svg(n, extra) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"' + (extra || '') + '>' + (IC[n] || '') + '</svg>'; }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+var store = {
+  get: function (k, d) { try { var v = localStorage.getItem('pbv_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set: function (k, v) { try { localStorage.setItem('pbv_' + k, JSON.stringify(v)); } catch (e) {} }
+};
+function toast(msg) { var t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove('on'); }, 1800); }
+function copyText(text, btn) {
+  var done = function () {
+    toast('Copied');
+    if (btn) { var h = btn.innerHTML; btn.classList.add('copied'); btn.innerHTML = svg('check') + 'Copied'; setTimeout(function () { btn.classList.remove('copied'); btn.innerHTML = h; }, 1500); }
+  };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+  function fallback() { var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) { toast('Select the text and copy it manually'); } ta.remove(); }
+}
+function copyBtn(label) { return '<button type="button" class="btn sm" data-copy>' + svg('copy') + (label || 'Copy') + '</button>'; }
+
+/* checklists: data-chk="id" elements toggle and persist */
+var CHK = store.get('chk', {});
+function chkHTML(id, title, desc) {
+  return '<div class="chk' + (CHK[id] ? ' done' : '') + '" data-chk="' + id + '" role="checkbox" tabindex="0" aria-checked="' + (!!CHK[id]) + '"><span class="box">' + svg('check', ' stroke-width="3"') + '</span><div><div class="t">' + title + '</div>' + (desc ? '<div class="d">' + desc + '</div>' : '') + '</div></div>';
+}
+document.addEventListener('click', function (e) {
+  var c = e.target.closest('[data-chk]');
+  if (c) { toggleChk(c); return; }
+  var b = e.target.closest('[data-copy]');
+  if (b) {
+    var src = b.getAttribute('data-copy-target');
+    var el = src ? document.getElementById(src) : (b.closest('[data-copy-scope]') || b.parentElement).querySelector('[data-copy-text]');
+    if (el) copyText(el.getAttribute('data-raw') || el.innerText, b);
+  }
+});
+document.addEventListener('keydown', function (e) { if ((e.key === ' ' || e.key === 'Enter') && e.target.matches && e.target.matches('[data-chk]')) { e.preventDefault(); toggleChk(e.target); } });
+function toggleChk(c) {
+  var id = c.getAttribute('data-chk'); CHK[id] = !CHK[id];
+  c.classList.toggle('done', CHK[id]); c.setAttribute('aria-checked', !!CHK[id]);
+  store.set('chk', CHK); updateProgress();
+}
+var PATH_IDS = [];
+function updateProgress() {
+  var total = PATH_IDS.length || 1, done = PATH_IDS.filter(function (k) { return CHK[k]; }).length;
+  var pct = Math.round(done / total * 100);
+  $$('#prog-pct,[data-prog-pct]').forEach(function (e) { e.textContent = pct + '%'; });
+  $$('#prog-bar,[data-prog-bar]').forEach(function (e) { e.style.width = pct + '%'; });
+  $$('[data-prog-count]').forEach(function (e) { e.textContent = done + ' of ' + total; });
+}
+
+/* accordion */
+document.addEventListener('click', function (e) {
+  var h = e.target.closest('.acc-h'); if (!h) return;
+  var a = h.parentElement; a.classList.toggle('open'); h.setAttribute('aria-expanded', a.classList.contains('open'));
+});
+function accHTML(num, title, sub, inner, open) {
+  return '<div class="acc' + (open ? ' open' : '') + '"><button type="button" class="acc-h" aria-expanded="' + (!!open) + '"><span class="num">' + num + '</span><span><b>' + title + '</b><span class="s2">' + sub + '</span></span>' + svg('chev', ' class="chev"') + '</button><div class="acc-b"><div><div class="acc-in">' + inner + '</div></div></div></div>';
+}
+
+/* reveal on scroll */
+var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold: .12, rootMargin: '0px 0px -30px 0px' }) : null;
+function armReveal(root) { $$('.rv:not(.in)', root).forEach(function (el, i) { if (!el.style.transitionDelay) el.style.transitionDelay = Math.min(i % 6, 5) * 60 + 'ms'; if (io) io.observe(el); else el.classList.add('in'); }); }
+
+/* theme */
+(function () {
+  var t = store.get('theme', 'dark'); document.documentElement.setAttribute('data-theme', t);
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('[data-theme-toggle]')) return;
+    t = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t); store.set('theme', t);
+  });
+})();
+
+/* routing */
+var ROUTES = [
+  { id:'home', label:'Overview', icon:'home' },
+  { id:'playbook', label:'Funnel Builder Playbook', short:'Playbook', icon:'book', n:'01' },
+  { id:'scripts', label:'Client-Getting Scripts', short:'Scripts', icon:'chat', n:'02' },
+  { id:'portfolio', label:'Ready-Made Portfolio', short:'Portfolio', icon:'layout', n:'03' },
+  { id:'briefs', label:'Niche Brief Swipe File', short:'Briefs', icon:'file', n:'04' }
+];
+var RENDER = {}, rendered = {};
+function buildNav() {
+  $('#nav').innerHTML = ROUTES.map(function (r) { return '<a href="#' + r.id + '" data-r="' + r.id + '">' + svg(r.icon) + '<span>' + r.label + '</span>' + (r.n ? '<span class="n">' + r.n + '</span>' : '') + '</a>'; }).join('');
+  $('#tabs').innerHTML = ROUTES.map(function (r) { return '<a href="#' + r.id + '" data-r="' + r.id + '">' + (r.short || r.label) + '</a>'; }).join('');
+}
+function route() {
+  var h = (location.hash || '#home').slice(1);
+  if (h.indexOf('show/') === 0) { if (window.showSample) window.showSample(h.slice(5)); return; }
+  document.body.classList.remove('presenting');
+  var id = h.split('/')[0]; if (!RENDER[id]) id = 'home';
+  $$('.view').forEach(function (v) { v.classList.toggle('on', v.id === 'v-' + id); });
+  $$('[data-r]').forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-r') === id); });
+  var v = document.getElementById('v-' + id);
+  if (!rendered[id]) { v.innerHTML = RENDER[id](); rendered[id] = true; if (RENDER[id + '_init']) RENDER[id + '_init'](v); }
+  armReveal(v); updateProgress();
+  var sub = h.split('/')[1];
+  if (sub) { var t = document.getElementById(sub); if (t) setTimeout(function () { t.scrollIntoView({ behavior:'smooth', block:'start' }); }, 80); }
+  else window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+  var tb = $('#tabs a.on'); if (tb && tb.scrollIntoView) tb.scrollIntoView({ inline:'center', block:'nearest' });
+}
+window.addEventListener('hashchange', route);
+
+/* ===== Home ===== */
+var BONUS_META = [
+  { id:'playbook', icon:'book', n:'01', title:'Funnel Builder Playbook', value:1497, desc:'Pick a niche that pays, build 3 service packages, price them with a live calculator and onboard clients like a pro agency.', tags:['Package builder','Price calculator','Onboarding kit'] },
+  { id:'scripts', icon:'chat', n:'02', title:'Client-Getting Script Pack', value:997, desc:'Copy-paste DMs, follow-ups, call script, proposal and objection replies in English and Taglish, auto-filled with your details.', tags:['40+ scripts','English + Taglish','Introvert-friendly'] },
+  { id:'portfolio', icon:'layout', n:'03', title:'Ready-Made Portfolio Pack', value:1497, desc:'5 sample funnels in high-paying niches you can show prospects today, with present mode and ready captions.', tags:['5 live samples','Present mode','Caption templates'] },
+  { id:'briefs', icon:'file', n:'04', title:'Niche Brief Swipe File', value:697, desc:'20 ready business briefs for Pahina Builder. Send one to the app in a click and your first funnel is ready in minutes.', tags:['20 niches','One-click send','Copy per field'] }
+];
+var LAUNCH_PATH = [
+  { id:'p1', t:'Pick your niche', d:'Playbook, step 1. Choose the one niche you will talk to first.', go:'playbook/pb-niche' },
+  { id:'p2', t:'Set your 3 packages and prices', d:'Playbook, steps 2 and 3. Use the package builder and calculator.', go:'playbook/pb-packages' },
+  { id:'p3', t:'Build your first sample funnel from a brief', d:'Swipe File. Send a brief to Pahina Builder and generate.', go:'briefs' },
+  { id:'p4', t:'Save 3 portfolio links', d:'Portfolio Pack. Pick the samples that match your niche.', go:'portfolio' },
+  { id:'p5', t:'Personalize your scripts', d:'Script Pack. Fill in your name and niche once.', go:'scripts' },
+  { id:'p6', t:'Send your first 10 DMs', d:'Script Pack. Use the cold DM and track your count.', go:'scripts/sc-tracker' },
+  { id:'p7', t:'Book your first discovery call', d:'Script Pack. Follow the call script step by step.', go:'scripts' },
+  { id:'p8', t:'Send your proposal and onboarding form', d:'Playbook, step 4. Copy the client questionnaire.', go:'playbook/pb-onboard' }
+];
+PATH_IDS = LAUNCH_PATH.map(function (s) { return s.id; });
+function peso(n) { return '₱' + Math.round(n).toLocaleString('en-US'); }
+RENDER.home = function () {
+  var total = BONUS_META.reduce(function (a, b) { return a + b.value; }, 0);
+  return '' +
+  '<div class="hero">' +
+    '<div><span class="eyebrow"><i></i>Your bonus vault</span>' +
+    '<h1>From first funnel to <em class="s">first paying</em> client.</h1>' +
+    '<p class="lead">Pahina Builder gives you the skill. These four bonuses give you the business around it: what to offer, what to charge, what to say and what to show.</p>' +
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px"><a class="btn pri" href="#playbook">Start with the Playbook ' + svg('arrow') + '</a><a class="btn" href="#home/launch">See your launch path</a></div>' +
+    '<div class="cards c3" style="margin-top:34px;max-width:520px"><div class="stat"><b>4</b><span>premium bonuses</span></div><div class="stat"><b>40+</b><span>ready scripts</span></div><div class="stat"><b>' + peso(total) + '</b><span>total bonus value</span></div></div></div>' +
+    '<div class="orbit" aria-hidden="true"><div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core">PB</div>' +
+      '<div class="spin">' + ['book','chat','layout','file'].map(function (n, i) { var a = i * Math.PI / 2 - Math.PI / 4; return '<div class="sat" style="left:' + (50 + 50 * Math.cos(a)) + '%;top:' + (50 + 50 * Math.sin(a)) + '%">' + svg(n) + '</div>'; }).join('') + '</div></div>' +
+  '</div>' +
+  '<div class="sec"><div class="sec-head"><div><span class="kicker">Your bonuses</span><h2>Everything you need to <em class="s">sell</em> your new skill</h2></div></div>' +
+  '<div class="cards c2">' + BONUS_META.map(function (b) {
+    return '<a class="card lift vcard rv" href="#' + b.id + '"><div style="display:flex;justify-content:space-between;align-items:flex-start"><span class="ico">' + svg(b.icon) + '</span><span class="val">BONUS ' + b.n + ' · VALUE ' + peso(b.value) + '</span></div><h3 style="font-size:18px">' + b.title + '</h3><p class="muted small" style="margin:0 0 14px">' + b.desc + '</p><div class="chips">' + b.tags.map(function (t) { return '<span class="pill">' + t + '</span>'; }).join('') + '</div><span class="go">Open bonus ' + svg('arrow') + '</span></a>';
+  }).join('') + '</div></div>' +
+  '<div class="sec" id="launch"><div class="sec-head"><div><span class="kicker">Your launch path</span><h2>8 steps to your first client</h2><p class="sub" style="margin:0">Tick each step as you finish it. Your progress is saved on this device.</p></div><div style="min-width:220px"><div class="prog-top" style="display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-bottom:8px"><span data-prog-count>0 of 8</span><b data-prog-pct style="color:var(--ink)">0%</b></div><div class="bar"><i data-prog-bar></i></div></div></div>' +
+  '<div class="cards c2">' + LAUNCH_PATH.map(function (s, i) {
+    return '<div class="rv" style="display:flex;gap:8px;align-items:stretch"><div style="flex:1">' + chkHTML(s.id, (i + 1) + '. ' + s.t, s.d + ' <a href="#' + s.go + '" onclick="event.stopPropagation()">Open</a>') + '</div></div>';
+  }).join('') + '</div></div>' +
+  '<div class="sec card rv" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><span class="ico" style="margin:0">' + svg('spark') + '</span><div style="flex:1;min-width:220px"><h3>Bookmark this page</h3><p class="muted small" style="margin:0">This vault is part of your ' + PRODUCT_NAME + '. You can always open it again from <b>' + (EDITION === 'builder' ? 'Bonuses' : 'Suite Tools') + '</b> inside the app.</p></div><a class="btn" href="' + PAHINA_APP_URL + '" target="_blank" rel="noopener">Open Pahina Builder ' + svg('ext') + '</a></div>';
+};
+
+/* ===== Bonus 01: Funnel Builder Playbook ===== */
+var NICHES = [
+  { id:'beauty', name:'Beauty clinics and salons', why:'Every new booking is worth a lot to them, and most still take bookings through Messenger by hand.', build:'Booking funnel with services menu, deposit payment and an AI chatbot for FAQs.', find:'Facebook pages of local clinics, Instagram, Google Maps listings with no website.', tools:['Pahina Book','Pahina AI','Services price list'] },
+  { id:'coach', name:'Coaches and consultants', why:'They sell high-ticket programs, so one extra client can pay for your whole fee.', build:'Webinar or discovery-call funnel with application form, booking and email capture.', find:'LinkedIn, Facebook groups, podcast guests, people running free workshops.', tools:['Booking','Opt-in page','Exit popup'] },
+  { id:'seller', name:'Online sellers', why:'They spend on ads every day but send traffic to a Facebook post. A real sales page lifts their results.', build:'Product sales page with COD or e-wallet checkout, upsell and order tracking.', find:'Facebook Marketplace, live sellers, Shopee and Lazada sellers with their own page.', tools:['Checkout','Pahina Orders + Stock','Upsell page'] },
+  { id:'realty', name:'Real estate agents', why:'One closed deal is a big commission, so a lead-generating page is easy to justify.', build:'Property showcase funnel with gallery, payment calculator and viewing booking.', find:'Property listing groups, brokerage pages, agents posting listings daily.', tools:['Gallery','Booking','Lead capture'] },
+  { id:'resort', name:'Resorts and staycations', why:'Direct bookings save them the commission that booking sites charge.', build:'Booking website with rooms, rates, gallery, map and deposit payment.', find:'Local tourism pages, Facebook groups for travel, Google Maps.', tools:['Pahina Book','Gallery','Map'] },
+  { id:'food', name:'Restaurants and cafes', why:'They want pre-orders, catering inquiries and reservations without hiring staff.', build:'Menu and order funnel with pre-order form, catering inquiry and chatbot.', find:'Food park pages, home-based food businesses, catering services.', tools:['Pahina Orders','Pahina AI','Menu page'] },
+  { id:'clinic', name:'Dental and medical clinics', why:'Patients research online first. A trustworthy page with booking wins the appointment.', build:'Clinic website with services, doctor profiles, FAQ and appointment booking.', find:'Google Maps listings, clinic Facebook pages, newly opened branches.', tools:['Pahina Book','FAQ','Multi-page website'] },
+  { id:'creator', name:'Course creators and digital sellers', why:'Their whole business is online, so the sales page is the business.', build:'Long-form sales page with bonuses, countdown, upsell and automatic delivery.', find:'Creators selling ebooks, templates or courses on Facebook, TikTok and Instagram.', tools:['Bonus stack','Countdown','Pahina Store'] }
+];
+var DELIVS = [
+  { id:'page', n:'High-converting sales page or funnel page', ph:5000, us:200 },
+  { id:'copy', n:'Persuasive copywriting (AI draft + your edits)', ph:1500, us:75 },
+  { id:'checkout', n:'Checkout and payment setup', ph:1500, us:75 },
+  { id:'track', n:'Meta Pixel and GA4 tracking', ph:1000, us:50 },
+  { id:'rev', n:'2 rounds of revisions', ph:1000, us:50 },
+  { id:'ty', n:'Thank-you, upsell and downsell pages', ph:2000, us:100 },
+  { id:'book', n:'Online booking system', ph:3000, us:150 },
+  { id:'bot', n:'AI chatbot that answers customers 24/7', ph:3000, us:150 },
+  { id:'orders', n:'Order and inventory system', ph:3000, us:150 },
+  { id:'site', n:'Full website (About, Services, FAQ, Contact)', ph:6000, us:250 },
+  { id:'store', n:'Online store setup', ph:5000, us:200 },
+  { id:'support', n:'30 days of support after launch', ph:2000, us:100 }
+];
+var TIERS = [
+  { id:'t1', name:'Starter Funnel', tag:'Best for first-time clients', on:['page','copy','checkout','track','rev'] },
+  { id:'t2', name:'Growth Funnel', tag:'Most popular', on:['page','copy','checkout','track','rev','ty','book','bot'] },
+  { id:'t3', name:'Premium Business System', tag:'For serious businesses', on:['page','copy','checkout','track','rev','ty','book','bot','orders','site','support'] }
+];
+var PB = store.get('pb', { niche:'', cur:'ph', tiers:null, goal:60000, ppm:4, hrs:6, cprice:1500, extra:10 });
+if (!PB.tiers) PB.tiers = TIERS.map(function (t) { return { name:t.name, on:t.on.slice() }; });
+function pbSave() { store.set('pb', PB); }
+function money(n) { return PB.cur === 'ph' ? peso(n) : '$' + Math.round(n).toLocaleString('en-US'); }
+function tierTotal(t) { return t.on.reduce(function (a, id) { var d = DELIVS.filter(function (x) { return x.id === id; })[0]; return a + (d ? (PB.cur === 'ph' ? d.ph : d.us) : 0); }, 0); }
+
+RENDER.playbook = function () {
+  var nicheCards = NICHES.map(function (n) {
+    return '<button type="button" class="card lift pb-niche rv' + (PB.niche === n.id ? ' sel' : '') + '" data-niche="' + n.id + '"><h3>' + n.name + '</h3><p class="muted small" style="margin:0 0 10px">' + n.why + '</p><div class="chips">' + n.tools.map(function (t) { return '<span class="pill">' + t + '</span>'; }).join('') + '</div></button>';
+  }).join('');
+  var timeline = [
+    ['Day 0','Deposit and kickoff','Client pays 50%. Send the onboarding questionnaire right away.'],
+    ['Day 1','Collect the details','Client fills the questionnaire, sends logo, photos and payment details.'],
+    ['Day 2','First draft in Pahina','Paste the answers into Pahina Builder, generate, polish the copy, send a preview link.'],
+    ['Day 3','Revisions','Apply feedback in one batch. Round 1 of 2.'],
+    ['Day 4','Connect the systems','Checkout, booking, chatbot, Pixel and GA4. Test every button.'],
+    ['Day 5','Launch and hand-off','Collect the final 50%, go live, send the hand-off message and ask for a testimonial.']
+  ];
+  var qa = [
+    ['qa1','Every button goes to the right place','Hero, sticky bar, offer card, final CTA and exit popup.'],
+    ['qa2','Checkout works end to end','Do a real or test order and confirm the client receives it.'],
+    ['qa3','Looks perfect on a phone','Open it on your own phone. Check images, spacing and the menu.'],
+    ['qa4','Prices and names match everywhere','Hero, offer card, FAQ and checkout show the same numbers.'],
+    ['qa5','Pixel and GA4 fire','Use Meta Pixel Helper and GA4 Realtime to confirm.'],
+    ['qa6','Booking and chatbot answer correctly','Book a test slot and ask the chatbot 3 common questions.'],
+    ['qa7','No typos in the headline and CTA','Read the top section out loud once.'],
+    ['qa8','Page loads fast','Test on mobile data. Compress any huge photo.']
+  ];
+  return '' +
+  '<span class="eyebrow"><i></i>Bonus 01 · Playbook</span>' +
+  '<h1>Turn Pahina into a <em class="s">paid</em> service.</h1>' +
+  '<p class="lead">Five steps that take you from "I can build funnels" to a clear offer with packages, prices and a client process you can repeat every week.</p>' +
+  '<div class="chips" style="margin-top:22px">' + ['1 Niche','2 Packages','3 Pricing','4 Onboarding','5 Get paid'].map(function (s, i) { return '<a class="chip" href="#playbook/' + ['pb-niche','pb-packages','pb-price','pb-onboard','pb-paid'][i] + '" style="text-decoration:none">' + s + '</a>'; }).join('') + '</div>' +
+
+  '<div class="sec" id="pb-niche"><span class="kicker">Step 1</span><h2>Pick <em class="s">one</em> niche first</h2><p class="sub">Clients pay more when you sound like a specialist. Tap the niche you will talk to first. You can add more later.</p>' +
+  '<div class="cards c4">' + nicheCards + '</div><div id="pb-niche-detail" class="card rv" style="margin-top:14px"></div></div>' +
+
+  '<div class="sec" id="pb-packages"><div class="sec-head"><div><span class="kicker">Step 2</span><h2>Build your <em class="s">3 packages</em></h2><p class="sub" style="margin:0">Three choices make it easy for a client to say yes. Toggle what each package includes and rename it if you like.</p></div><div class="seg" id="pb-cur"><button type="button" data-cur="ph">Philippines (₱)</button><button type="button" data-cur="us">International ($)</button></div></div>' +
+  '<div class="cards c3" id="pb-tiers"></div>' +
+  '<div class="card rv" style="margin-top:14px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div style="flex:1;min-width:240px"><h3>Add a monthly retainer</h3><p class="muted small" style="margin:0">Offer page updates, new promos and support for <b id="pb-ret"></b> per month. Five retainer clients give you steady income every month.</p></div><button type="button" class="btn" id="pb-copy-menu">' + svg('copy') + 'Copy my package menu</button></div>' +
+  '<p class="tiny muted" style="margin-top:10px">Prices are suggested starting points. Adjust them to your experience and your market.</p></div>' +
+
+  '<div class="sec" id="pb-price"><span class="kicker">Step 3</span><h2>Price it with <em class="s">confidence</em></h2><p class="sub">Two checks: what you need to earn, and what the funnel is worth to the client. Charge somewhere between the two.</p>' +
+  '<div class="cards c2">' +
+    '<div class="card rv"><h3>' + svg('calc', ' style="width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--acc2)"') + 'Your income goal</h3>' +
+      '<div class="pb-sl"><label class="l">Monthly income goal <b id="o-goal"></b></label><input type="range" id="i-goal" min="10000" max="300000" step="5000"></div>' +
+      '<div class="pb-sl"><label class="l">Projects per month <b id="o-ppm"></b></label><input type="range" id="i-ppm" min="1" max="15" step="1"></div>' +
+      '<div class="pb-sl"><label class="l">Hours per project <b id="o-hrs"></b></label><input type="range" id="i-hrs" min="2" max="30" step="1"></div>' +
+      '<div class="pb-out"><span class="muted small">Charge at least</span><div class="big-num" id="o-min"></div><span class="muted small" id="o-rate"></span></div></div>' +
+    '<div class="card rv"><h3>' + svg('target', ' style="width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--acc2)"') + 'Value to the client</h3>' +
+      '<div class="pb-sl"><label class="l">Client\'s product or service price <b id="o-cprice"></b></label><input type="range" id="i-cprice" min="200" max="50000" step="100"></div>' +
+      '<div class="pb-sl"><label class="l">Extra sales per month from a better page <b id="o-extra"></b></label><input type="range" id="i-extra" min="1" max="100" step="1"></div>' +
+      '<div class="pb-out"><span class="muted small">Extra revenue for the client in one year</span><div class="big-num" id="o-val"></div><span class="muted small" id="o-roi"></span></div></div>' +
+  '</div>' +
+  '<div class="card rv" style="margin-top:14px"><h3>Say it like this on the call</h3><div class="script" data-copy-scope><span data-copy-text id="pb-say"></span></div><div style="margin-top:10px">' + '<button type="button" class="btn sm" data-copy data-copy-target="pb-say">' + svg('copy') + 'Copy</button></div></div></div>' +
+
+  '<div class="sec" id="pb-onboard"><span class="kicker">Step 4</span><h2>Onboard like an <em class="s">agency</em></h2><p class="sub">A clear process makes you look experienced on your very first project, and keeps every project to about 5 days.</p>' +
+  '<div class="pb-time">' + timeline.map(function (t) { return '<div class="pb-tl rv"><span class="pb-dot"></span><span class="pill acc">' + t[0] + '</span><h3 style="margin-top:8px">' + t[1] + '</h3><p class="muted small" style="margin:0">' + t[2] + '</p></div>'; }).join('') + '</div>' +
+  accHTML('A','Client onboarding questionnaire','Matches the Pahina Builder fields, so you can paste answers straight in', '<div class="script" data-copy-scope><span data-copy-text>' + esc(QUESTIONNAIRE) + '</span></div><div style="margin-top:10px">' + copyBtn('Copy questionnaire') + '</div>', true) +
+  accHTML('B','Pre-launch quality checklist','Tick all 8 before you send the live link', qa.map(function (q) { return chkHTML(q[0], q[1], q[2]); }).join('')) +
+  accHTML('C','Hand-off message','Send this with the live link', '<div class="script" data-copy-scope><span data-copy-text>' + esc(HANDOFF) + '</span></div><div style="margin-top:10px">' + copyBtn() + '</div>') +
+  '</div>' +
+
+  '<div class="sec" id="pb-paid"><span class="kicker">Step 5</span><h2>Get paid, <em class="s">every time</em></h2><p class="sub">Simple rules that protect your time and money from day one.</p>' +
+  '<div class="cards c3">' + [
+    ['money','50% before you start','Never begin work without the deposit. Final 50% before the page goes live.'],
+    ['layers','2 revision rounds','Collect feedback in one batch per round. Extra rounds are billed separately.'],
+    ['clock','Clear deadlines','Your 5-day timeline starts when you receive the questionnaire and assets.'],
+    ['shield','You own it until paid','The client gets the final files and hosting access after full payment.'],
+    ['flag','Scope in writing','Anything not in the package is a new quote. Say it kindly, early.'],
+    ['star','Ask for a testimonial','Right after launch, while they are happy. It becomes your best sales tool.']
+  ].map(function (r) { return '<div class="card rv"><span class="ico">' + svg(r[0]) + '</span><h3>' + r[1] + '</h3><p class="muted small" style="margin:0">' + r[2] + '</p></div>'; }).join('') + '</div>' +
+  '<div style="margin-top:14px">' + accHTML('D','Simple service agreement','Fill in the brackets and send before the deposit', '<div class="script" data-copy-scope><span data-copy-text>' + esc(AGREEMENT) + '</span></div><div style="margin-top:10px">' + copyBtn('Copy agreement') + '</div><p class="tiny muted" style="margin:10px 0 0">A simple template, not legal advice. For big contracts, have it checked.</p>') +
+  accHTML('E','Payment request message','For the deposit and the final payment', '<div class="script" data-copy-scope><span data-copy-text>' + esc(PAYMSG) + '</span></div><div style="margin-top:10px">' + copyBtn() + '</div>') + '</div></div>';
+};
+var QUESTIONNAIRE = 'Hi [Client name]! To build your page fast, please answer these. Short answers are fine.\n\n1. Business or brand name:\n2. What exactly are you selling? (product, service or package)\n3. Price, and the regular price if there is a promo:\n4. Who is your ideal customer? (age, job, situation)\n5. What problems or frustrations do they have before they buy from you?\n6. What changes for them after they buy? (the result)\n7. What is included? List everything they get.\n8. Any guarantee or refund policy?\n9. Bonuses or freebies, if any:\n10. Deadline or promo end date, if any:\n11. How do customers pay? (GCash, Maya, bank, card link, COD)\n12. Do you want online booking, a chatbot, or order tracking?\n13. Your brand colors, and 1 to 2 websites you like the look of:\n14. Please send: logo, 3 to 10 photos, and real customer feedback screenshots if you have them.\n\nThank you! Once I have these, your first draft is ready in about 2 days.';
+var HANDOFF = 'Hi [Client name]! Your page is live: [link]\n\nHere is everything you need:\n- Page link: [link]\n- Orders and bookings go to: [email or sheet]\n- Payments go to: [payment method]\n- Tracking: Meta Pixel and GA4 are connected\n\nNext steps for you:\n1. Share the link on your page, ads and bio.\n2. Reply to new inquiries within the day.\n3. Send me any update you need during the next 30 days.\n\nIt was a joy building this for you. If you are happy with the result, a short testimonial would help my small business a lot. Thank you!';
+var AGREEMENT = 'SERVICE AGREEMENT\n\nBetween: [Your name] ("Designer") and [Client name / business] ("Client")\nDate: [date]\n\n1. Project: [Package name], which includes: [list of deliverables].\n2. Fee: [total amount]. 50% deposit before work starts, 50% before the page goes live.\n3. Timeline: about [5] working days from the day the Designer receives the completed questionnaire and all assets.\n4. Revisions: [2] rounds included. Additional rounds or new features are quoted separately.\n5. Client provides: business details, logo, photos, payment details and timely feedback.\n6. Ownership: after full payment, the Client owns the final page and content. The Designer may show the project in a portfolio unless the Client asks otherwise.\n7. Third-party costs (domain, ads, paid tools) are paid by the Client.\n8. Support: [30] days of minor fixes after launch.\n\nAgreed by:\nDesigner: ____________   Client: ____________';
+var PAYMSG = 'Hi [Client name]! To lock in your slot and start your [package name], here is the [50% deposit / final 50%] of [amount]:\n\n[GCash / Maya / bank details or payment link]\n\nOnce I receive it, I will send [the onboarding form / your live link] right away. Thank you!';
+
+RENDER.playbook_init = function (v) {
+  function niche() {
+    var n = NICHES.filter(function (x) { return x.id === PB.niche; })[0];
+    $$('.pb-niche', v).forEach(function (b) { b.classList.toggle('sel', b.getAttribute('data-niche') === PB.niche); });
+    var d = $('#pb-niche-detail', v);
+    if (!n) { d.innerHTML = '<p class="muted small" style="margin:0">Tap a niche above to see what to build for them and where to find them.</p>'; return; }
+    d.innerHTML = '<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px"><h3 style="margin:0">Your niche: ' + n.name + '</h3><span class="pill ok">' + svg('check', ' style="width:13px;height:13px"') + 'Saved</span></div><div class="cards c3"><div><span class="kicker">What to build</span><p class="small" style="margin:0">' + n.build + '</p></div><div><span class="kicker">Where to find them</span><p class="small" style="margin:0">' + n.find + '</p></div><div><span class="kicker">Next</span><p class="small" style="margin:0"><a href="#briefs">Open the matching niche briefs</a> and build a sample for your portfolio.</p></div></div>';
+  }
+  $$('.pb-niche', v).forEach(function (b) { b.addEventListener('click', function () { PB.niche = b.getAttribute('data-niche'); pbSave(); niche(); if (!CHK.p1) { CHK.p1 = true; store.set('chk', CHK); updateProgress(); } }); });
+  niche();
+  function tiers() {
+    $$('#pb-cur button', v).forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-cur') === PB.cur); });
+    $('#pb-tiers', v).innerHTML = PB.tiers.map(function (t, ti) {
+      return '<div class="card pb-tier' + (ti === 1 ? ' feat' : '') + '">' + (ti === 1 ? '<span class="pill acc" style="position:absolute;top:-11px;left:20px;background:var(--card)">Most popular</span>' : '') + '<input class="pb-tname" data-ti="' + ti + '" value="' + esc(t.name) + '" aria-label="Package name"><div class="pb-price" data-tp="' + ti + '">' + money(tierTotal(t)) + '</div><div class="tiny muted" style="margin-bottom:12px">one-time project fee</div>' +
+        DELIVS.map(function (d) { var on = t.on.indexOf(d.id) > -1; return '<button type="button" class="pb-del' + (on ? ' on' : '') + '" data-ti="' + ti + '" data-d="' + d.id + '"><span class="box">' + svg('check', ' stroke-width="3"') + '</span><span>' + d.n + '</span></button>'; }).join('') + '</div>';
+    }).join('');
+    $('#pb-ret', v).textContent = PB.cur === 'ph' ? '₱3,000 to ₱8,000' : '$150 to $400';
+  }
+  tiers();
+  v.addEventListener('click', function (e) {
+    var c = e.target.closest('[data-cur]'); if (c) { PB.cur = c.getAttribute('data-cur'); pbSave(); tiers(); calc(); return; }
+    var d = e.target.closest('.pb-del'); if (d) {
+      var t = PB.tiers[+d.getAttribute('data-ti')], id = d.getAttribute('data-d'), i = t.on.indexOf(id);
+      if (i > -1) t.on.splice(i, 1); else t.on.push(id);
+      d.classList.toggle('on'); var p = $('[data-tp="' + d.getAttribute('data-ti') + '"]', v); p.textContent = money(tierTotal(t)); p.classList.remove('bump'); void p.offsetWidth; p.classList.add('bump');
+      pbSave(); if (!CHK.p2) { CHK.p2 = true; store.set('chk', CHK); updateProgress(); }
+    }
+  });
+  v.addEventListener('input', function (e) { if (e.target.classList.contains('pb-tname')) { PB.tiers[+e.target.getAttribute('data-ti')].name = e.target.value; pbSave(); } });
+  $('#pb-copy-menu', v).addEventListener('click', function () {
+    var txt = 'MY FUNNEL SERVICE PACKAGES\n\n' + PB.tiers.map(function (t) { return t.name.toUpperCase() + ' — ' + money(tierTotal(t)) + '\n' + t.on.map(function (id) { return '- ' + DELIVS.filter(function (x) { return x.id === id; })[0].n; }).join('\n'); }).join('\n\n') + '\n\nMONTHLY CARE PLAN — ' + (PB.cur === 'ph' ? '₱3,000 to ₱8,000' : '$150 to $400') + ' per month\n- Page updates, new promos and priority support';
+    copyText(txt, this);
+  });
+  var S = { goal:[10000,300000], ppm:[1,15], hrs:[2,30], cprice:[200,50000], extra:[1,100] };
+  Object.keys(S).forEach(function (k) { var i = $('#i-' + k, v); i.value = PB[k]; i.addEventListener('input', function () { PB[k] = +i.value; pbSave(); calc(); }); });
+  function calc() {
+    var fx = PB.cur === 'ph' ? 1 : 1 / 56;
+    $('#o-goal', v).textContent = money(PB.goal * fx); $('#o-ppm', v).textContent = PB.ppm; $('#o-hrs', v).textContent = PB.hrs + ' hrs';
+    $('#o-cprice', v).textContent = money(PB.cprice * fx); $('#o-extra', v).textContent = PB.extra;
+    var min = Math.ceil(PB.goal / PB.ppm / 500) * 500;
+    $('#o-min', v).textContent = money(min * fx);
+    $('#o-rate', v).textContent = 'per project · about ' + money(min / PB.hrs * fx) + ' per hour of work';
+    var val = PB.cprice * PB.extra * 12;
+    $('#o-val', v).textContent = money(val * fx);
+    var growth = tierTotal(PB.tiers[1]) / fx;
+    var months = val > 0 ? growth / (PB.cprice * PB.extra) : 0;
+    $('#o-roi', v).textContent = months <= 1 ? 'Your Growth package pays for itself in the first month.' : 'Your Growth package pays for itself in about ' + Math.ceil(months) + ' months.';
+    $('#pb-say', v).textContent = '"Right now, if this page brings you just ' + PB.extra + ' extra sales a month at ' + money(PB.cprice * fx) + ', that is ' + money(PB.cprice * PB.extra * fx) + ' every month, or ' + money(val * fx) + ' in a year. The ' + PB.tiers[1].name + ' is ' + money(tierTotal(PB.tiers[1])) + ', one time. Most clients see it as an investment that pays for itself. Which package feels right for you?"';
+  }
+  calc();
+};
+
+/* ===== Bonus 02: Client-Getting Script Pack ===== */
+var SC_CATS = [
+  ['all','All'],['cold','Cold DMs'],['warm','Warm network'],['follow','Follow-ups'],['call','Discovery call'],['proposal','Proposal'],['objection','Objections'],['close','Closing'],['referral','Referrals']
+];
+var SCRIPTS = [
+  { id:'c1', cat:'cold', title:'The genuine compliment opener', when:'First message to a business page you like. Low pressure, starts a conversation.',
+    en:'Hi {client}! I came across {biz} and I really like how you present your services. Quick question: when people message you to book or order, do you send them to a page, or do you handle everything in chat?',
+    tl:'Hi {client}! Nakita ko yung {biz} and ang ganda ng pagkaka-present mo ng services mo. Quick question lang: pag may nagme-message para mag-book or mag-order, may page ka ba na pinapadalhan sa kanila, or sa chat mo lang lahat inaasikaso?' },
+  { id:'c2', cat:'cold', title:'The quick observation opener', when:'When you noticed something specific they can improve (no page, link goes to a post, no booking).',
+    en:'Hi {client}, I help {niche} get more bookings with simple sales pages. I noticed {biz} sends people to a Facebook post instead of a page with prices, booking and payment in one place. I put together an idea of what yours could look like. Want me to send it? No cost, no pressure.',
+    tl:'Hi {client}, tumutulong ako sa mga {niche} na makakuha ng mas maraming bookings gamit ang simple sales pages. Napansin ko na sa FB post lang napupunta ang mga tao sa {biz}, wala pang page na nandun na ang prices, booking at payment. Gumawa ako ng sample kung ano ang pwedeng itsura ng sa\'yo. Gusto mo makita? Libre lang, walang pressure.' },
+  { id:'c3', cat:'cold', title:'The portfolio-first opener', when:'When you already have a sample in their niche from the Portfolio Pack.',
+    en:'Hi {client}! I just finished a sample sales page for a business like {biz}: {link}\n\nIt has the services menu, online booking and payment in one link. If you like the style, I can build one for {biz} this week. Would that be helpful?',
+    tl:'Hi {client}! Kakatapos ko lang gumawa ng sample sales page para sa business na katulad ng {biz}: {link}\n\nNandun na ang services, online booking at payment, isang link lang. Kung bet mo yung style, kaya kong gawan ang {biz} this week. Makakatulong ba \'to sa\'yo?' },
+  { id:'c4', cat:'cold', title:'The question-only opener', when:'For busy owners. Short enough to answer in 5 seconds.',
+    en:'Hi {client}, quick one: are you open to getting more bookings online this month?',
+    tl:'Hi {client}, quick question lang: open ka ba na madagdagan ang online bookings mo this month?' },
+  { id:'w1', cat:'warm', title:'Announce your service on Facebook', when:'Post this on your personal profile. Your network is your fastest first client.',
+    en:'Big news: I now build high-converting sales pages and websites for small businesses.\n\nIf you sell a product or service and your customers still have to message you just to ask the price, I can give you one link with your offer, prices, booking or checkout, and even a chatbot that replies 24/7.\n\nI am taking 3 clients this month at an intro rate. Comment "PAGE" or message me and I will show you samples.',
+    tl:'May bago akong offer: gumagawa na ako ng high-converting sales pages at websites para sa small businesses.\n\nKung may binebenta kang product or service at kailangan pang mag-message ng customers mo para lang malaman ang price, kaya kitang bigyan ng isang link na nandun na ang offer mo, prices, booking or checkout, at may chatbot pa na sumasagot 24/7.\n\n3 clients lang ang tatanggapin ko this month sa intro rate. Comment "PAGE" or i-message mo ako para makita mo ang samples.' },
+  { id:'w2', cat:'warm', title:'Ask friends for an introduction', when:'Send to 10 friends who know business owners.',
+    en:'Hi {client}! I just started a new service: I build sales pages and booking websites for small businesses. Do you know anyone who sells online or runs a salon, clinic, resort or shop who might need one? An intro would mean a lot to me.',
+    tl:'Hi {client}! May bago akong service: gumagawa ako ng sales pages at booking websites para sa small businesses. May kilala ka bang nagbebenta online or may salon, clinic, resort or shop na baka kailangan nito? Malaking tulong sa akin kung ma-intro mo ako.' },
+  { id:'w3', cat:'warm', title:'Reply to a "PAGE" comment', when:'When someone comments on your announcement post.',
+    en:'Hi {client}! Thanks for commenting. Here are 2 samples I made: {link}\n\nWhat do you sell? I will tell you which style fits your business best.',
+    tl:'Hi {client}! Salamat sa comment. Eto yung 2 samples na ginawa ko: {link}\n\nAno ang binebenta mo? Sasabihin ko kung anong style ang pinaka-swak sa business mo.' },
+  { id:'f1', cat:'follow', title:'Follow-up after 2 days', when:'No reply to your first message.',
+    en:'Hi {client}, just floating this up in case it got buried. Happy to send the sample idea for {biz} whenever you are ready.',
+    tl:'Hi {client}, ifo-follow up ko lang baka natabunan. Ready akong i-send yung sample idea para sa {biz} kahit kailan mo gusto.' },
+  { id:'f2', cat:'follow', title:'Follow-up after 5 days, with value', when:'Still no reply. Give something useful.',
+    en:'Hi {client}! One quick tip for {biz}, free: put your prices and a "Book now" button in the first screen of your page. Most people leave if they cannot see the price in a few seconds. If you want, I can set that up for you.',
+    tl:'Hi {client}! Isang free tip para sa {biz}: ilagay mo ang prices at "Book now" button sa pinaka-unang makikita sa page mo. Madaming umaalis pag hindi agad nila makita ang price. Kung gusto mo, ako na ang mag-setup nito para sa\'yo.' },
+  { id:'f3', cat:'follow', title:'The friendly last message', when:'After 10 days. Closes the loop politely. Often gets the most replies.',
+    en:'Hi {client}, I will stop messaging so I do not crowd your inbox. If you ever want more bookings from one simple link, I am just a message away. Wishing {biz} a great month!',
+    tl:'Hi {client}, hindi na kita kukulitin para hindi mapuno ang inbox mo. Kung gusto mo ng mas maraming bookings gamit ang isang simple link, message mo lang ako anytime. Good luck sa {biz} this month!' },
+  { id:'k1', cat:'call', title:'Discovery call script (15 minutes)', when:'Follow it step by step. You mostly ask and listen, which is perfect if you are an introvert.',
+    en:'1. OPEN (1 min)\n"Thanks for your time, {client}! I want to understand {biz} first so I only suggest what actually helps. Is it okay if I ask a few questions?"\n\n2. CURRENT SITUATION (4 min)\n"How do customers find you right now?"\n"What happens after they message you? Walk me through it."\n"About how many inquiries do you get in a week, and how many become paying customers?"\n\n3. THE PAIN (3 min)\n"What is the most annoying part of that process for you?"\n"What does it cost you when people ask the price and then disappear?"\n\n4. THE GOAL (2 min)\n"If this worked perfectly 3 months from now, what would be different?"\n\n5. THE SOLUTION (3 min)\n"Based on what you shared, here is what I would build: one page with your offer, prices, [booking / checkout / chatbot], so customers can say yes without waiting for a reply. Here is a sample: {link}"\n\n6. NEXT STEP (2 min)\n"I have 3 packages. Based on your goals, the [package] fits best. Want me to send the proposal today?"',
+    tl:'1. OPEN (1 min)\n"Salamat sa time mo, {client}! Gusto ko munang maintindihan ang {biz} para yung talagang makakatulong lang ang i-suggest ko. Okay lang ba magtanong ako ng ilang questions?"\n\n2. CURRENT SITUATION (4 min)\n"Paano ka nahahanap ng customers ngayon?"\n"Ano ang nangyayari pag nag-message na sila? Kwento mo step by step."\n"Mga ilang inquiries ang dumarating per week, at ilan ang talagang nagbabayad?"\n\n3. THE PAIN (3 min)\n"Ano ang pinaka-nakakapagod na part ng process na \'yan para sa\'yo?"\n"Magkano sa tingin mo ang nawawala pag nagtatanong sila ng price tapos hindi na nagre-reply?"\n\n4. THE GOAL (2 min)\n"Kung perfect na gumagana \'to 3 months from now, ano ang iba?"\n\n5. THE SOLUTION (3 min)\n"Base sa kwento mo, eto ang gagawin ko: isang page na nandun na ang offer mo, prices, [booking / checkout / chatbot], para makapag-yes ang customer kahit hindi ka pa nagre-reply. Eto ang sample: {link}"\n\n6. NEXT STEP (2 min)\n"May 3 packages ako. Base sa goals mo, yung [package] ang pinaka-swak. Gusto mo i-send ko ang proposal today?"' },
+  { id:'k2', cat:'call', title:'Book the call', when:'When they show interest in chat.',
+    en:'Love that! The fastest way is a quick 15-minute call so I can understand {biz} and show you exactly what I would build. Are you free [day] at [time] or [day] at [time]?',
+    tl:'Ayos! Pinakamabilis kung mag-quick 15-minute call tayo para maintindihan ko ang {biz} at maipakita ko kung ano mismo ang gagawin ko. Free ka ba sa [day] [time] or [day] [time]?' },
+  { id:'p1', cat:'proposal', title:'Proposal message', when:'Send within 24 hours after the call, while they are excited.',
+    en:'Hi {client}! Thank you for the call. Here is my proposal for {biz}:\n\nTHE GOAL\n[Their goal in their own words]\n\nWHAT I WILL BUILD\n- [Deliverable 1]\n- [Deliverable 2]\n- [Deliverable 3]\n\nTIMELINE\nAbout 5 working days after I receive your details.\n\nINVESTMENT\n[Package name]: {price}, one time. 50% to start, 50% before launch.\n\nTo get started, just reply "GO" and I will send the deposit details and a short form.',
+    tl:'Hi {client}! Salamat sa call kanina. Eto ang proposal ko para sa {biz}:\n\nTHE GOAL\n[Goal nila in their own words]\n\nWHAT I WILL BUILD\n- [Deliverable 1]\n- [Deliverable 2]\n- [Deliverable 3]\n\nTIMELINE\nMga 5 working days pagkatanggap ko ng details mo.\n\nINVESTMENT\n[Package name]: {price}, one-time. 50% para mag-start, 50% bago mag-launch.\n\nPara makapag-start tayo, reply ka lang ng "GO" at ise-send ko ang deposit details at isang short form.' },
+  { id:'o1', cat:'objection', title:'"It is too expensive." / "Mahal."', when:'Do not drop your price right away. Reframe the value first.',
+    en:'I understand, it is a real investment. Can I ask: how much is one new customer worth to {biz}? If this page brings even a few extra customers a month, it pays for itself and keeps working every day after that. If the budget is tight right now, we can start with the Starter package and upgrade later.',
+    tl:'Gets kita, investment talaga \'to. Pero tanong lang: magkano ang worth ng isang bagong customer para sa {biz}? Kung kahit ilang extra customers lang per month ang madala ng page na \'to, bawi na agad, tapos tuloy-tuloy pa siyang gumagana araw-araw. Kung tight ang budget ngayon, pwede tayong mag-start sa Starter package then upgrade later.' },
+  { id:'o2', cat:'objection', title:'"Let me think about it." / "Iisipin ko muna."', when:'Find the real concern with one kind question.',
+    en:'Of course, take your time. Just so I can help, is it more about the budget, the timing, or whether it will actually work for {biz}?',
+    tl:'Sure, take your time. Para lang matulungan kita, mas sa budget ba, sa timing, or kung gagana ba talaga \'to para sa {biz}?' },
+  { id:'o3', cat:'objection', title:'"I already have a Facebook page."', when:'Very common. Show the difference, do not attack their page.',
+    en:'That is great, keep it! Your Facebook page brings people in. The sales page is where they say yes: prices, booking and payment in one link, with no waiting for your reply. They work best together.',
+    tl:'Ayos yan, keep mo lang! Ang FB page mo ang nagdadala ng tao. Ang sales page naman ang lugar kung saan sila nagye-yes: nandun na ang prices, booking at payment, isang link lang, hindi na kailangang hintayin ang reply mo. Mas malakas pag magkasama sila.' },
+  { id:'o4', cat:'objection', title:'"No budget right now."', when:'Keep the door open and stay top of mind.',
+    en:'Totally understand. Would it help if I checked back in [month], when things are usually busier for {biz}? I can also send you 3 free tips you can use on your page today.',
+    tl:'Gets na gets. Okay lang ba kung balikan kita sa [month], kung kailan usually mas busy ang {biz}? Pwede rin kitang i-send ng 3 free tips na magagamit mo sa page mo ngayon.' },
+  { id:'o5', cat:'objection', title:'"What if nobody buys?"', when:'Be honest. Never promise results you cannot guarantee.',
+    en:'Fair question. I cannot promise a number of sales, because that also depends on your traffic and your offer. What I can promise is a page built on proven sales structure, tested on mobile, with tracking so we can see exactly what visitors do and improve it.',
+    tl:'Valid na tanong. Hindi ko mapo-promise ang exact na number ng sales, kasi depende rin sa traffic at offer mo. Pero ang kaya kong i-promise: page na built sa proven sales structure, tested sa mobile, at may tracking para makita natin kung ano ang ginagawa ng visitors at ma-improve pa natin.' },
+  { id:'x1', cat:'close', title:'They said yes', when:'Make paying easy and confirm the next step.',
+    en:'Yay, excited to build this for {biz}! Here is the 50% deposit to lock your slot: {price}\n[payment details]\n\nOnce sent, I will message you the short form right away so we can start.',
+    tl:'Yay, excited na akong gawin \'to para sa {biz}! Eto ang 50% deposit para ma-lock ang slot mo: {price}\n[payment details]\n\nPag na-send mo na, ise-send ko agad ang short form para makapag-start na tayo.' },
+  { id:'x2', cat:'close', title:'Gentle nudge after the proposal', when:'No answer 2 days after sending the proposal.',
+    en:'Hi {client}! Did you get a chance to look at the proposal? I have one slot left this week. Happy to answer any question first.',
+    tl:'Hi {client}! Nakita mo na ba yung proposal? May isang slot pa akong available this week. Kung may tanong ka muna, sasagutin ko.' },
+  { id:'r1', cat:'referral', title:'Ask for a testimonial', when:'Right after launch, when they are happiest.',
+    en:'Hi {client}! It was a joy building the page for {biz}. Would you write 2 to 3 sentences about working with me? It would help my small business a lot. Thank you!',
+    tl:'Hi {client}! Sobrang saya kong ginawa ang page ng {biz}. Pwede ka bang magsulat ng 2 to 3 sentences tungkol sa experience mo working with me? Malaking tulong \'to sa small business ko. Salamat!' },
+  { id:'r2', cat:'referral', title:'Ask for a referral', when:'2 to 4 weeks after launch.',
+    en:'Hi {client}! Hope the page is helping {biz}. Do you know 1 or 2 business owners who might want the same? I will give them a special rate because they came from you.',
+    tl:'Hi {client}! Sana nakakatulong ang page sa {biz}. May kilala ka bang 1 or 2 business owners na baka gusto rin nito? Bibigyan ko sila ng special rate kasi galing sila sa\'yo.' }
+];
+var SC = store.get('sc', { lang:'tl', cat:'all', name:'', niche:'', client:'', biz:'', link:'', price:'', dms:0, replies:0, calls:0 });
+function scSave() { store.set('sc', SC); }
+function scFill(t, hl) {
+  var map = { name:SC.name || '[Your name]', niche:SC.niche || (function () { var n = NICHES.filter(function (x) { return x.id === PB.niche; })[0]; return n ? n.name.toLowerCase() : '[your niche]'; })(), client:SC.client || '[Client name]', biz:SC.biz || '[Business name]', link:SC.link || '[your sample link]', price:SC.price || '[price]' };
+  return t.replace(/\{(\w+)\}/g, function (m, k) { var v = map[k] || m; if (!hl) return v; var filled = !/^\[/.test(v); return '<mark' + (filled ? ' class="f"' : '') + '>' + esc(v) + '</mark>'; });
+}
+RENDER.scripts = function () {
+  var plan = [
+    ['d1','Day 1: Post your announcement','Use "Announce your service on Facebook". Reply to every comment.'],
+    ['d2','Day 2: Message 10 friends for intros','Use "Ask friends for an introduction".'],
+    ['d3','Day 3: Send 10 cold DMs','Pick businesses in your niche. Use the compliment opener.'],
+    ['d4','Day 4: Send 10 more and follow up','New DMs plus the 2-day follow-up.'],
+    ['d5','Day 5: Send 10 portfolio-first DMs','Attach the sample from the Portfolio Pack.'],
+    ['d6','Day 6: Follow up and book calls','Use the 5-day follow-up with a free tip.'],
+    ['d7','Day 7: Review your numbers','What got replies? Do more of that next week.']
+  ];
+  return '' +
+  '<span class="eyebrow"><i></i>Bonus 02 · Script pack</span>' +
+  '<h1>Know <em class="s">exactly</em> what to say.</h1>' +
+  '<p class="lead">Messages that start conversations, book calls and close clients, in English and Taglish. Fill in your details once and every script personalizes itself.</p>' +
+  '<div class="card rv sc-pers" style="margin-top:28px"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px"><h3 style="margin:0">' + svg('spark', ' style="width:18px;height:18px;vertical-align:-3px;margin-right:6px;color:var(--acc2)"') + 'Personalize every script</h3><div class="seg" id="sc-lang"><button type="button" data-lang="tl">Taglish</button><button type="button" data-lang="en">English</button></div></div>' +
+  '<div class="cards c3">' + [['name','Your name','Levi'],['niche','Your niche (plural)','salon owners'],['link','Your sample link','pahina.site/sample'],['client','Client first name','Maria'],['biz','Client business','Glow Skin Studio'],['price','Package price','₱12,000']].map(function (f) { return '<div><label class="l" for="sc-' + f[0] + '">' + f[1] + '</label><input class="inp" id="sc-' + f[0] + '" data-f="' + f[0] + '" placeholder="' + f[2] + '"></div>'; }).join('') + '</div></div>' +
+  '<div class="sec" style="margin-top:34px"><div class="chips" id="sc-cats" style="margin-bottom:18px"></div><div class="sc-list" id="sc-list"></div></div>' +
+  '<div class="sec" id="sc-tracker"><span class="kicker">Introvert-friendly plan</span><h2>Your first <em class="s">7 days</em> of outreach</h2><p class="sub">About 30 minutes a day, all in writing. Track your numbers so you can see what works.</p>' +
+  '<div class="cards c3" style="margin-bottom:14px">' + [['dms','DMs sent','send'],['replies','Replies','chat'],['calls','Calls booked','users']].map(function (c) { return '<div class="card sc-count"><span class="ico">' + svg(c[2]) + '</span><span class="tiny muted">' + c[1] + '</span><div class="big-num" id="sc-n-' + c[0] + '">0</div><div style="display:flex;gap:6px;margin-top:10px"><button type="button" class="btn sm" data-cnt="' + c[0] + '" data-d="-1" aria-label="Minus one">−</button><button type="button" class="btn sm pri" data-cnt="' + c[0] + '" data-d="1">+1</button></div></div>'; }).join('') + '</div>' +
+  '<div class="card rv" style="margin-bottom:14px"><span class="tiny muted">Reply rate</span><div style="display:flex;align-items:center;gap:14px"><div class="bar" style="flex:1"><i id="sc-rr-bar"></i></div><b id="sc-rr">0%</b></div><p class="tiny muted" style="margin:8px 0 0" id="sc-rr-tip">Send your first DMs to see your reply rate.</p></div>' +
+  '<div class="cards c2">' + plan.map(function (p) { return '<div class="rv">' + chkHTML(p[0], p[1], p[2]) + '</div>'; }).join('') + '</div></div>';
+};
+RENDER.scripts_init = function (v) {
+  ['name','niche','link','client','biz','price'].forEach(function (k) { var i = $('#sc-' + k, v); i.value = SC[k] || ''; i.addEventListener('input', function () { SC[k] = i.value; scSave(); list(); if (SC.name && !CHK.p5) { CHK.p5 = true; store.set('chk', CHK); updateProgress(); } }); });
+  function langs() { $$('#sc-lang button', v).forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-lang') === SC.lang); }); }
+  function cats() { $('#sc-cats', v).innerHTML = SC_CATS.map(function (c) { var n = c[0] === 'all' ? SCRIPTS.length : SCRIPTS.filter(function (s) { return s.cat === c[0]; }).length; return '<button type="button" class="chip' + (SC.cat === c[0] ? ' on' : '') + '" data-cat="' + c[0] + '">' + c[1] + ' <span style="opacity:.6">' + n + '</span></button>'; }).join(''); }
+  function list() {
+    $('#sc-list', v).innerHTML = SCRIPTS.filter(function (s) { return SC.cat === 'all' || s.cat === SC.cat; }).map(function (s) {
+      var catName = SC_CATS.filter(function (c) { return c[0] === s.cat; })[0][1];
+      return '<div class="card sc-item" data-copy-scope><div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px"><div><span class="pill acc" style="margin-bottom:8px">' + catName + '</span><h3 style="margin-top:8px">' + s.title + '</h3><p class="tiny muted" style="margin:0">' + s.when + '</p></div>' + copyBtn() + '</div><div class="script" data-copy-text data-raw="' + esc(scFill(s[SC.lang], false)) + '">' + scFill(esc(s[SC.lang]), true) + '</div></div>';
+    }).join('');
+  }
+  v.addEventListener('click', function (e) {
+    var l = e.target.closest('[data-lang]'); if (l) { SC.lang = l.getAttribute('data-lang'); scSave(); langs(); list(); return; }
+    var c = e.target.closest('[data-cat]'); if (c) { SC.cat = c.getAttribute('data-cat'); scSave(); cats(); list(); return; }
+    var n = e.target.closest('[data-cnt]'); if (n) { var k = n.getAttribute('data-cnt'); SC[k] = Math.max(0, (SC[k] || 0) + (+n.getAttribute('data-d'))); scSave(); counts(); var el = $('#sc-n-' + k, v); el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+  });
+  function counts() {
+    ['dms','replies','calls'].forEach(function (k) { $('#sc-n-' + k, v).textContent = SC[k] || 0; });
+    var rr = SC.dms ? Math.round((SC.replies || 0) / SC.dms * 100) : 0;
+    $('#sc-rr', v).textContent = rr + '%'; $('#sc-rr-bar', v).style.width = Math.min(rr, 100) + '%';
+    $('#sc-rr-tip', v).textContent = !SC.dms ? 'Send your first DMs to see your reply rate.' : (SC.dms < 20 ? 'Keep going. Reply rates become meaningful after about 20 DMs.' : (rr < 10 ? 'Low replies? Make the first line more specific to their business, and try the question-only opener.' : 'Nice. Keep the same openers and focus on booking calls.'));
+    if (SC.dms >= 10 && !CHK.p6) { CHK.p6 = true; store.set('chk', CHK); updateProgress(); }
+    if (SC.calls >= 1 && !CHK.p7) { CHK.p7 = true; store.set('chk', CHK); updateProgress(); }
+  }
+  langs(); cats(); list(); counts();
+};
+
+/* ===== Bonus 03: Ready-Made Portfolio Pack ===== */
+var SAMPLES = [
+  { id:'lumiere', name:'Lumière Skin Studio', niche:'Beauty clinic', brief:'b-beauty', kind:'Booking funnel',
+    feats:['Services menu with prices','Online booking + deposit','FAQ that removes doubts'],
+    t:{ bg:'#F7F3EE', surf:'#FFFFFF', alt:'#EFE7DD', ink:'#221C18', mute:'#6E625A', acc:'#9C6B4E', accInk:'#FFFFFF', line:'rgba(34,28,24,.1)', head:"'Cormorant Garamond',Georgia,serif", body:"'Montserrat',system-ui,sans-serif", q:'Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600', hw:600, r:'999px', cr:'22px', hs:1.12 },
+    nav:['Treatments','How it works','FAQ'], eyebrow:'Skin clinic · Quezon City',
+    h1:'Clear, glowing skin, <em>without</em> the guesswork.', sub:'Doctor-guided facials and skin programs designed for Filipino skin. See the price, pick a slot and book in under a minute.',
+    cta:'Book my facial', cta2:'See treatments',
+    float1:['Next available','Today, 3:00 PM'], float2:['Deposit','₱500 secures your slot'],
+    vis:'beauty', marquee:['Hydrafacial','Acne Clear','Glass Skin','Skin Consult','Gentle on sensitive skin','Book online 24/7'],
+    painT:'Sound familiar?', pains:['You have tried products that promised results and did nothing.','You message clinics and wait hours just to know the price.','You are not sure which treatment is right for your skin.'],
+    svcT:'Treatments and prices', svcs:[['Signature Hydrafacial','Deep cleanse, exfoliation and hydration in one session.','₱2,499'],['Acne Clear Facial','Calms breakouts and redness. Safe for sensitive skin.','₱1,899'],['Glass Skin Package','4 sessions over 8 weeks for lasting glow.','₱5,999']],
+    steps:[['Choose your treatment','Prices are clear before you book.'],['Pick a date and time','See real open slots and pay the ₱500 deposit.'],['Walk in and glow','Your skin plan starts on your first visit.']],
+    offer:{ name:'Glass Skin Package', price:'₱5,999', old:'₱7,996', incl:['4 Hydrafacial sessions','Free skin consultation','Personal at-home routine','Priority booking for 3 months'], cta:'Book my package' },
+    faq:[['Is it safe for sensitive skin?','Yes. Every treatment starts with a skin check, and we adjust it to your skin.'],['Can I reschedule?','Yes, up to 24 hours before your slot, free of charge.'],['How do I pay the deposit?','GCash, Maya or card, right after you choose your slot.']],
+    fin:'Your best skin starts with <em>one</em> booking.' },
+  { id:'rise', name:'Rise Coaching', niche:'Fitness coach', brief:'b-coach', kind:'Application funnel',
+    feats:['Bold high-ticket hero','Program breakdown','Discovery call booking'],
+    t:{ bg:'#0C0C0C', surf:'#151515', alt:'#111111', ink:'#F4F4F2', mute:'#9A9A95', acc:'#C8F135', accInk:'#0C0C0C', line:'rgba(255,255,255,.1)', head:"'Bebas Neue',Impact,sans-serif", body:"'Inter',system-ui,sans-serif", q:'Bebas+Neue&family=Inter:wght@400;500;600;700', hw:400, r:'10px', cr:'16px', hs:1.3, up:1 },
+    nav:['Program','Results','Apply'], eyebrow:'12-week online coaching',
+    h1:'Get strong, lean and <em>confident</em> in 12 weeks.', sub:'A coaching program for busy professionals: training plans that fit your schedule, simple Filipino-food meal guides and weekly check-ins with your coach.',
+    cta:'Apply for coaching', cta2:'See the program',
+    float1:['Workouts','4x a week, 45 min'], float2:['Check-ins','Every Sunday'],
+    vis:'fitness', marquee:['Strength','Fat loss','Meal guides','Weekly check-ins','Train anywhere','No crash diets'],
+    painT:'Why most plans fail', pains:['Generic programs that ignore your work schedule.','Diets that ban rice and the food you grew up with.','No one checking in when motivation drops.'],
+    svcT:'What is inside the program', svcs:[['Custom training plan','Built for home or gym, updated every 4 weeks.','Weeks 1-12'],['Pinoy-friendly meal guide','Real food, real portions, no crash diet.','Included'],['Weekly coach check-in','Form reviews, progress tracking and adjustments.','Every week']],
+    steps:[['Apply in 2 minutes','Tell us your goal and schedule.'],['Free discovery call','We check if the program is right for you.'],['Start week 1','Your plan arrives within 48 hours.']],
+    offer:{ name:'12-Week Transformation', price:'₱9,997', old:'', incl:['Custom training plan','Meal guide and grocery list','12 weekly check-ins','Private member chat'], cta:'Apply now' },
+    faq:[['Do I need a gym?','No. Every plan has a home version with minimal equipment.'],['I am a total beginner. Is this for me?','Yes. Your plan starts at your current level.'],['How much time do I need?','About 45 minutes, 4 times a week.']],
+    fin:'Twelve weeks from now, you will be <em>glad</em> you started.' },
+  { id:'kape', name:'Kape Kanto', niche:'Cafe and catering', brief:'b-food', kind:'Pre-order funnel',
+    feats:['Party tray menu','Pre-order and deposit','Catering inquiry'],
+    t:{ bg:'#FFF8EF', surf:'#FFFFFF', alt:'#FBEBD7', ink:'#2B1A10', mute:'#7A6152', acc:'#C2410C', accInk:'#FFFFFF', line:'rgba(43,26,16,.1)', head:"'Fraunces',Georgia,serif", body:"'Manrope',system-ui,sans-serif", q:'Fraunces:ital,wght@0,600;0,700;1,500&family=Manrope:wght@400;500;600;700', hw:700, r:'14px', cr:'20px', hs:1 },
+    nav:['Menu','Catering','Order'], eyebrow:'Cafe · Party trays · Catering',
+    h1:'Party trays your guests will <em>talk</em> about.', sub:'Freshly cooked trays and coffee bars for birthdays, office parties and family gatherings. Pre-order online and pick up or have it delivered.',
+    cta:'Pre-order a tray', cta2:'See the menu',
+    float1:['Order ahead','2 days before'], float2:['Feeds','10 to 15 people per tray'],
+    vis:'food', marquee:['Pancit Bihon','Baked Mac','Chicken Pastel','Coffee Bar','Office catering','Same-day pickup'],
+    painT:'Planning a party is stressful enough', pains:['Cooking for 30 people takes your whole day.','Caterers reply slowly and prices are unclear.','You worry the food will run out.'],
+    svcT:'Best-selling trays', svcs:[['Pancit Bihon Tray','Good for 10 to 15 people.','₱1,450'],['Baked Macaroni Tray','Creamy, cheesy, kids love it.','₱1,650'],['Coffee Bar for 30','Barista, iced and hot drinks for 2 hours.','₱6,500']],
+    steps:[['Pick your trays','Clear prices, clear servings.'],['Choose date and pay 50%','Secure your order online.'],['Pick up or get it delivered','Hot, fresh and on time.']],
+    offer:{ name:'Party Bundle for 30', price:'₱4,999', old:'₱5,750', incl:['Pancit Bihon tray','Baked Macaroni tray','Chicken Pastel tray','Free calamansi juice for 30'], cta:'Pre-order the bundle' },
+    faq:[['How early should I order?','At least 2 days before. For coffee bars, 1 week.'],['Do you deliver?','Yes, within the city. The fee shows at checkout.'],['Can I customize a tray?','Yes. Add a note when you order.']],
+    fin:'Let us handle the food. You enjoy the <em>party</em>.' },
+  { id:'alon', name:'Alon Bay Resort', niche:'Resort', brief:'b-resort', kind:'Booking website',
+    feats:['Room rates and inclusions','Booking with deposit','Map and directions'],
+    t:{ bg:'#F3F8F8', surf:'#FFFFFF', alt:'#E3EFEF', ink:'#0F2A2E', mute:'#55706F', acc:'#0E7490', accInk:'#FFFFFF', line:'rgba(15,42,46,.1)', head:"'Playfair Display',Georgia,serif", body:"'Plus Jakarta Sans',system-ui,sans-serif", q:'Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700', hw:700, r:'999px', cr:'24px', hs:1.02 },
+    nav:['Rooms','Amenities','Book'], eyebrow:'Beachfront resort · Batangas',
+    h1:'Wake up to the sound of the <em>sea</em>.', sub:'A quiet beachfront escape two hours from Manila. Book direct for the best rate, free breakfast and an early check-in when available.',
+    cta:'Check available dates', cta2:'View rooms',
+    float1:['Best rate','When you book direct'], float2:['Breakfast','Free for 2'],
+    vis:'resort', marquee:['Beachfront','Infinity pool','Kayaks','Free breakfast','Pet-friendly villas','2 hours from Manila'],
+    painT:'Booking a getaway should be easy', pains:['Booking sites add fees on top of the room rate.','You message resorts and wait for days.','Photos online rarely show what you actually get.'],
+    svcT:'Rooms and rates', svcs:[['Garden Room','Queen bed, garden view, good for 2.','₱4,200 / night'],['Ocean Suite','King bed, balcony, sea view, good for 2.','₱6,800 / night'],['Family Villa','2 bedrooms, kitchenette, good for 6.','₱11,500 / night']],
+    steps:[['Choose your room','See real rates and inclusions.'],['Pick dates and pay 30%','Your booking is confirmed instantly.'],['Arrive and unwind','We will message directions a day before.']],
+    offer:{ name:'Weekend Escape for 2', price:'₱12,900', old:'₱14,600', incl:['2 nights in an Ocean Suite','Breakfast for 2 daily','Kayak and paddleboard use','Late check-out (subject to availability)'], cta:'Book my weekend' },
+    faq:[['Is the deposit refundable?','You can move your dates once for free, up to 7 days before arrival.'],['Are pets allowed?','Yes, in our Family Villas.'],['How do we get there?','About 2 hours by car. A map and directions are sent after booking.']],
+    fin:'Your quiet weekend by the sea is <em>one click</em> away.' },
+  { id:'focus', name:'FocusOS Planner', niche:'Digital product', brief:'b-digital', kind:'Product sales page',
+    feats:['Long-form sales copy','Bonus stack and countdown','Instant download checkout'],
+    t:{ bg:'#0A0B12', surf:'#12141F', alt:'#0E1019', ink:'#EEF0F7', mute:'#9196AB', acc:'#22D3EE', accInk:'#05212A', line:'rgba(255,255,255,.09)', head:"'Space Grotesk',system-ui,sans-serif", body:"'Inter',system-ui,sans-serif", q:'Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1', hw:700, r:'12px', cr:'18px', hs:1, accSerif:1 },
+    nav:['Inside','Bonuses','Get it'], eyebrow:'Digital planner · Notion and PDF',
+    h1:'Plan your week in 15 minutes. <em>Actually</em> finish it.', sub:'A digital planning system for freelancers and VAs juggling many clients: weekly planner, client tracker and focus timer in one beautiful template.',
+    cta:'Get instant access', cta2:'See what is inside',
+    float1:['Format','Notion + printable PDF'], float2:['Access','Instant download'],
+    vis:'digital', marquee:['Weekly planner','Client tracker','Focus timer','Goal map','Invoice log','Lifetime updates'],
+    painT:'Busy is not the same as productive', pains:['You work all day but your big tasks never move.','Client deadlines live in five different apps.','Planning takes so long you skip it.'],
+    svcT:'What is inside', svcs:[['Weekly planning dashboard','See every client, task and deadline on one page.','Notion'],['Client and invoice tracker','Know who owes you and what is due next.','Notion + PDF'],['Focus sprint timer','Work in deep 50-minute sprints.','Built in']],
+    steps:[['Get instant access','Download right after checkout.'],['Duplicate the template','One click into your Notion.'],['Plan your first week','Follow the 15-minute guide.']],
+    offer:{ name:'FocusOS Complete', price:'₱499', old:'₱999', incl:['FocusOS Notion template','Printable PDF planner','Quick-start video guide','Free lifetime updates'], cta:'Get FocusOS now' },
+    faq:[['Do I need paid Notion?','No. It works on the free Notion plan.'],['Can I use it on my phone?','Yes, in the Notion app on any device.'],['How do I receive it?','You get the download link right after payment.']],
+    fin:'Stop feeling busy. Start feeling <em>done</em>.' }
+];
+function sampleVisual(s) {
+  var t = s.t, a = t.acc;
+  var shapes = {
+    beauty:'<div class="sv-blob" style="background:' + t.alt + ';border-radius:48% 52% 45% 55%/55% 45% 55% 45%"></div><div class="sv-arch"></div><div class="sv-drop" style="left:22%;top:26%"></div><div class="sv-drop" style="left:64%;top:58%;transform:scale(.7)"></div><div class="sv-ring" style="right:12%;top:14%"></div>',
+    fitness:'<div class="sv-bars">' + [40,62,50,78,66,92].map(function (h, i) { return '<i style="height:' + h + '%;animation-delay:' + i * .12 + 's"></i>'; }).join('') + '</div><div class="sv-big">12</div>',
+    food:'<div class="sv-plate"><div></div></div><div class="sv-steam"><i></i><i></i><i></i></div>',
+    resort:'<div class="sv-sun"></div><div class="sv-wave w1"></div><div class="sv-wave w2"></div><div class="sv-wave w3"></div>',
+    digital:'<div class="sv-ui"><div class="sv-ui-top"><i></i><i></i><i></i></div><div class="sv-ui-body"><div class="sv-col">' + [80,55,70,40].map(function (w) { return '<b style="width:' + w + '%"></b>'; }).join('') + '</div><div class="sv-col">' + [60,85,45].map(function (w) { return '<b style="width:' + w + '%"></b>'; }).join('') + '<span class="sv-ring2"></span></div></div></div>'
+  };
+  return '<div class="sv sv-' + s.vis + '">' + shapes[s.vis] + '<div class="sv-card c1"><small>' + s.float1[0] + '</small><b>' + s.float1[1] + '</b></div><div class="sv-card c2"><small>' + s.float2[0] + '</small><b>' + s.float2[1] + '</b></div></div>';
+}
+function sampleHTML(s, opts) {
+  opts = opts || {};
+  var t = s.t, ck = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var arrow = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var css = ':root{--bg:' + t.bg + ';--surf:' + t.surf + ';--alt:' + t.alt + ';--ink:' + t.ink + ';--mute:' + t.mute + ';--acc:' + t.acc + ';--accink:' + t.accInk + ';--line:' + t.line + ';--head:' + t.head + ';--body:' + t.body + ';--r:' + t.r + ';--cr:' + t.cr + '}' +
+    '*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}' +
+    'h1,h2,h3{font-family:var(--head);font-weight:' + t.hw + ';letter-spacing:' + (t.up ? '.01em' : '-.02em') + ';line-height:1.05;margin:0;' + (t.up ? 'text-transform:uppercase;' : '') + '}' +
+    'h1 em,h2 em{font-style:italic;color:var(--acc);' + (t.accSerif ? "font-family:'Instrument Serif',Georgia,serif;font-weight:400;" : '') + (t.up ? 'text-transform:none;font-family:Georgia,serif;font-weight:400;font-size:.8em;' : '') + '}' +
+    '.w{max-width:1120px;margin:0 auto;padding:0 22px}section{padding:clamp(64px,9vw,110px) 0}' +
+    'nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}' +
+    'nav .w{display:flex;align-items:center;gap:24px;height:68px}.brand{font-family:var(--head);font-weight:' + t.hw + ';font-size:' + (22 * t.hs) + 'px;letter-spacing:' + (t.up ? '.04em' : '-.02em') + ';' + (t.up ? 'text-transform:uppercase;' : '') + 'margin-right:auto}nav a.l{color:var(--mute);text-decoration:none;font-size:14px;font-weight:500}nav a.l:hover{color:var(--ink)}' +
+    '.btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 24px;border-radius:var(--r);background:var(--acc);color:var(--accink);font-weight:600;font-size:15px;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 10px 30px -12px var(--acc)}.btn:hover{transform:translateY(-2px)}.btn.g{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}nav .btn{min-height:40px;padding:0 16px;font-size:13.5px}' +
+    '.hero{padding:clamp(48px,7vw,90px) 0 clamp(56px,8vw,100px)}.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}' +
+    '.eb{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}.eb::before{content:"";width:22px;height:1.5px;background:var(--acc)}' +
+    '.hero h1{font-size:clamp(' + Math.round(40 * t.hs) + 'px,' + (6 * t.hs).toFixed(1) + 'vw,' + Math.round(76 * t.hs) + 'px);margin:18px 0 18px}.hero p{font-size:18px;color:var(--mute);max-width:520px;margin:0 0 30px}.row{display:flex;gap:12px;flex-wrap:wrap}' +
+    '.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--surf)}.mq div{display:flex;gap:48px;width:max-content;animation:mq 28s linear infinite}.mq span{font-family:var(--head);font-size:' + (20 * t.hs) + 'px;white-space:nowrap;color:var(--mute);' + (t.up ? 'text-transform:uppercase;' : '') + '}.mq span::after{content:"\\2022";margin-left:48px;color:var(--acc)}@keyframes mq{to{transform:translateX(-50%)}}' +
+    '.sh{max-width:640px;margin:0 0 44px}.sh h2{font-size:clamp(' + Math.round(30 * t.hs) + 'px,' + (4 * t.hs).toFixed(1) + 'vw,' + Math.round(48 * t.hs) + 'px)}.sh p{color:var(--mute);margin:12px 0 0}.ct{text-align:center;margin-left:auto;margin-right:auto}' +
+    '.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.cd{background:var(--surf);border:1px solid var(--line);border-radius:var(--cr);padding:28px;transition:transform .35s,box-shadow .35s}.cd:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(0,0,0,.35)}' +
+    '.pain .cd p{margin:0;font-size:17px}.pain .n{font-family:var(--head);font-size:' + (40 * t.hs) + 'px;color:var(--acc);display:block;margin-bottom:10px;line-height:1}' +
+    '.svc{background:var(--alt)}.svc .cd h3{font-size:' + (24 * t.hs) + 'px;margin-bottom:8px}.svc .cd p{color:var(--mute);margin:0 0 22px;font-size:15px}.svc .pr{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;font-weight:700;font-size:18px}.svc .pr a{font-size:13.5px;color:var(--acc);text-decoration:none;font-weight:600}' +
+    '.st{counter-reset:s}.st .cd{position:relative}.st .cd::before{counter-increment:s;content:"0" counter(s);font-family:var(--head);font-size:' + (52 * t.hs) + 'px;line-height:1;color:var(--acc);opacity:.9;display:block;margin-bottom:14px}.st h3{font-size:' + (22 * t.hs) + 'px;margin-bottom:6px}.st p{margin:0;color:var(--mute)}' +
+    '.of .box{max-width:560px;margin:0 auto;background:var(--surf);border:1px solid var(--line);border-radius:calc(var(--cr) + 6px);padding:clamp(28px,5vw,44px);box-shadow:0 40px 80px -40px rgba(0,0,0,.45);position:relative;overflow:hidden}.of .box::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--acc)}' +
+    '.of h3{font-size:' + (30 * t.hs) + 'px}.of .p{display:flex;align-items:baseline;gap:12px;margin:14px 0 22px}.of .p b{font-size:clamp(44px,7vw,58px);font-family:var(--head);font-weight:' + t.hw + ';letter-spacing:-.03em;line-height:1}.of .p s{color:var(--mute);font-size:20px}.of ul{list-style:none;padding:0;margin:0 0 28px}.of li{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.of li svg{color:var(--acc);flex:none}.of .btn{width:100%;justify-content:center}.of small{display:block;text-align:center;color:var(--mute);margin-top:12px;font-size:13px}' +
+    '.fq details{border-bottom:1px solid var(--line);padding:20px 0}.fq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}.fq summary::after{content:"+";color:var(--acc);font-size:22px;line-height:1;transition:transform .3s}.fq details[open] summary::after{transform:rotate(45deg)}.fq p{color:var(--mute);margin:12px 0 0}' +
+    '.fin{text-align:center}.fin h2{font-size:clamp(' + Math.round(34 * t.hs) + 'px,' + (5 * t.hs).toFixed(1) + 'vw,' + Math.round(60 * t.hs) + 'px);max-width:760px;margin:0 auto 28px}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:13px}footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}' +
+    '.sv{position:relative;aspect-ratio:1/1.02;border-radius:calc(var(--cr) + 10px);background:var(--surf);border:1px solid var(--line);overflow:hidden}' +
+    '.sv-card{position:absolute;background:color-mix(in srgb,var(--surf) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 18px 40px -20px rgba(0,0,0,.4);animation:fl 6s ease-in-out infinite}.sv-card small{display:block;font-size:11.5px;color:var(--mute);font-weight:500}.sv-card b{font-size:14.5px}.sv-card.c1{left:7%;bottom:9%}.sv-card.c2{right:7%;top:9%;animation-delay:-3s}@keyframes fl{50%{transform:translateY(-10px)}}' +
+    '.sv-blob{position:absolute;inset:14%;animation:mo 14s ease-in-out infinite}@keyframes mo{50%{border-radius:55% 45% 52% 48%/45% 55% 45% 55%;transform:rotate(8deg)}}.sv-arch{position:absolute;left:30%;right:30%;top:22%;bottom:18%;border-radius:999px 999px 24px 24px;background:var(--acc);opacity:.88}.sv-drop{position:absolute;width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--surf);box-shadow:0 10px 24px -10px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}.sv-ring{position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid var(--acc);opacity:.5}' +
+    '.sv-bars{position:absolute;left:12%;right:12%;bottom:16%;height:58%;display:flex;align-items:flex-end;gap:10px}.sv-bars i{flex:1;background:var(--acc);border-radius:6px 6px 0 0;transform-origin:bottom;animation:gr 2.4s cubic-bezier(.16,1,.3,1) both}.sv-bars i:nth-child(odd){opacity:.35}@keyframes gr{from{transform:scaleY(0)}}.sv-big{position:absolute;left:10%;top:6%;font-family:var(--head);font-size:150px;line-height:1;color:var(--ink);opacity:.08}' +
+    '.sv-plate{position:absolute;inset:18%;border-radius:50%;background:var(--alt);display:grid;place-items:center;box-shadow:inset 0 0 0 14px var(--surf),0 30px 60px -30px rgba(0,0,0,.4)}.sv-plate div{width:58%;height:58%;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E9A15B 0 18%,transparent 19%),radial-gradient(circle at 65% 40%,#9BB26A 0 12%,transparent 13%),radial-gradient(circle at 50% 66%,#D46A3C 0 16%,transparent 17%),#F2C98A}.sv-steam{position:absolute;left:40%;top:6%;display:flex;gap:12px}.sv-steam i{width:6px;height:46px;border-radius:9px;background:var(--mute);opacity:.25;animation:stm 3s ease-in-out infinite}.sv-steam i:nth-child(2){animation-delay:.6s}.sv-steam i:nth-child(3){animation-delay:1.2s}@keyframes stm{50%{transform:translateY(-10px);opacity:.05}}' +
+    '.sv-sun{position:absolute;width:38%;aspect-ratio:1;border-radius:50%;background:#F6C76B;left:31%;top:16%}.sv-wave{position:absolute;left:-10%;right:-10%;height:46%;border-radius:45% 55% 0 0/30% 30% 0 0;background:var(--acc);animation:wv 7s ease-in-out infinite}.sv-wave.w1{bottom:-6%;opacity:.35}.sv-wave.w2{bottom:-16%;opacity:.6;animation-delay:-2s}.sv-wave.w3{bottom:-26%;animation-delay:-4s}@keyframes wv{50%{transform:translateX(4%)}}' +
+    '.sv-ui{position:absolute;inset:12% 9%;border-radius:14px;background:var(--alt);border:1px solid var(--line);overflow:hidden}.sv-ui-top{display:flex;gap:6px;padding:12px;border-bottom:1px solid var(--line)}.sv-ui-top i{width:9px;height:9px;border-radius:50%;background:var(--line)}.sv-ui-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}.sv-col{display:flex;flex-direction:column;gap:10px;position:relative}.sv-col b{height:12px;border-radius:6px;background:var(--line)}.sv-col b:first-child{background:var(--acc);opacity:.8}.sv-ring2{width:74px;height:74px;border-radius:50%;border:8px solid var(--line);border-top-color:var(--acc);margin-top:8px;animation:sp 3s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}' +
+    '.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.rv.in{opacity:1;transform:none}.hero .rv{animation:up .9s cubic-bezier(.16,1,.3,1) both}.hero .rv:nth-child(2){animation-delay:.08s}.hero .rv:nth-child(3){animation-delay:.16s}.hero .rv:nth-child(4){animation-delay:.24s}@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}' +
+    '.badge{position:fixed;right:14px;bottom:14px;z-index:20;font:600 11px/1 system-ui,sans-serif;letter-spacing:.04em;background:rgba(0,0,0,.72);color:#fff;padding:8px 11px;border-radius:999px}' +
+    '@media(max-width:860px){.hero .w{grid-template-columns:1fr;gap:36px}.g3{grid-template-columns:1fr}nav a.l{display:none}.sv{max-width:440px}}' +
+    '@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}';
+  var h = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + s.name + ' — sample page</title><link href="https://fonts.googleapis.com/css2?family=' + t.q + '&display=swap" rel="stylesheet"><style>' + css + '</style></head><body>' +
+    '<nav><div class="w"><span class="brand">' + s.name + '</span>' + s.nav.map(function (n, i) { return '<a class="l" href="#' + ['svc','how','faq'][i] + '">' + n + '</a>'; }).join('') + '<a class="btn" href="#offer">' + s.cta + '</a></div></nav>' +
+    '<header class="hero"><div class="w"><div><span class="eb rv">' + s.eyebrow + '</span><h1 class="rv">' + s.h1 + '</h1><p class="rv">' + s.sub + '</p><div class="row rv"><a class="btn" href="#offer">' + s.cta + ' ' + arrow + '</a><a class="btn g" href="#svc">' + s.cta2 + '</a></div></div>' + sampleVisual(s) + '</div></header>' +
+    '<div class="mq"><div>' + s.marquee.concat(s.marquee).map(function (m) { return '<span>' + m + '</span>'; }).join('') + '</div></div>' +
+    '<section class="pain"><div class="w"><div class="sh rv"><h2>' + s.painT + '</h2></div><div class="g3">' + s.pains.map(function (p, i) { return '<div class="cd rv"><span class="n">0' + (i + 1) + '</span><p>' + p + '</p></div>'; }).join('') + '</div></div></section>' +
+    '<section class="svc" id="svc"><div class="w"><div class="sh rv"><h2>' + s.svcT + '</h2><p>Clear prices, no need to message first.</p></div><div class="g3">' + s.svcs.map(function (v) { return '<div class="cd rv"><h3>' + v[0] + '</h3><p>' + v[1] + '</p><div class="pr"><span>' + v[2] + '</span><a href="#offer">Choose</a></div></div>'; }).join('') + '</div></div></section>' +
+    '<section class="st" id="how"><div class="w"><div class="sh ct rv"><h2>How it works</h2></div><div class="g3">' + s.steps.map(function (v) { return '<div class="cd rv"><h3>' + v[0] + '</h3><p>' + v[1] + '</p></div>'; }).join('') + '</div></div></section>' +
+    '<section class="of" id="offer" style="background:var(--alt)"><div class="w"><div class="box rv"><span class="eb">Best value</span><h3 style="margin-top:12px">' + s.offer.name + '</h3><div class="p"><b>' + s.offer.price + '</b>' + (s.offer.old ? '<s>' + s.offer.old + '</s>' : '') + '</div><ul>' + s.offer.incl.map(function (x) { return '<li>' + ck + '<span>' + x + '</span></li>'; }).join('') + '</ul><a class="btn" href="#offer">' + s.offer.cta + ' ' + arrow + '</a><small>Secure checkout · GCash, Maya and cards</small></div></div></section>' +
+    '<section class="fq" id="faq"><div class="w" style="max-width:780px"><div class="sh ct rv"><h2>Questions, answered</h2></div>' + s.faq.map(function (q) { return '<details class="rv"><summary>' + q[0] + '</summary><p>' + q[1] + '</p></details>'; }).join('') + '</div></section>' +
+    '<section class="fin"><div class="w"><h2 class="rv">' + s.fin + '</h2><a class="btn rv" href="#offer">' + s.cta + ' ' + arrow + '</a></div></section>' +
+    '<footer><div class="w"><span>&copy; ' + new Date().getFullYear() + ' ' + s.name + '</span><span>Sample concept page</span></div></footer>' +
+    (opts.badge ? '<div class="badge">SAMPLE CONCEPT</div>' : '') +
+    '<script>(function(){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});document.querySelectorAll("section .rv,footer .rv").forEach(function(el,i){el.style.transitionDelay=(i%3)*80+"ms";io.observe(el)});document.querySelectorAll(".hero .rv").forEach(function(el){el.classList.add("in")})})();<\/script></body></html>';
+  return h;
+}
+var CAPTIONS = {
+  fb:'I just finished a new sample sales page for a [niche] business.\n\nOne link with the services, clear prices, online booking and payment, so customers can say yes without waiting for a reply.\n\nIf you run a [niche] business and want a page like this for your brand, message me. I am opening 3 slots this month.\n\n[link]',
+  li:'Concept project: a booking funnel for a [niche] business.\n\nThe goal: turn "How much?" messages into confirmed bookings.\n\nWhat I built:\n- Clear services menu with prices\n- Online booking with deposit\n- FAQ that answers doubts before they ask\n- Mobile-first design\n\nOpen to new funnel projects. Link to the full page in the comments.',
+  dm:'Here is a sample I built for a business like yours: [link]\n\nIt is a concept page, so the brand is made up, but the structure is exactly what I would build for you: your services, your prices and your booking in one link. Want me to sketch yours?'
+};
+RENDER.portfolio = function () {
+  return '' +
+  '<span class="eyebrow"><i></i>Bonus 03 · Portfolio pack</span>' +
+  '<h1>No clients yet? Show <em class="s">this</em>.</h1>' +
+  '<p class="lead">Five polished sample funnels in niches that pay well. Preview them on desktop and mobile, present them full screen on a call, and rebuild any of them in Pahina under your own name.</p>' +
+  '<div class="cards c3" style="margin-top:32px" id="pf-grid">' + SAMPLES.map(function (s, i) {
+    return '<div class="card pf-card lift rv" data-s="' + s.id + '"><div class="pf-thumb"><iframe title="' + s.name + ' preview" loading="lazy" tabindex="-1" aria-hidden="true" data-sample="' + s.id + '"></iframe><button type="button" class="pf-open" data-view="' + s.id + '" aria-label="Preview ' + s.name + '"></button></div>' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:14px 0 6px"><span class="pill acc">' + s.niche + '</span><span class="tiny muted">' + s.kind + '</span></div><h3>' + s.name + '</h3><ul class="pf-feats">' + s.feats.map(function (f) { return '<li>' + svg('check') + f + '</li>'; }).join('') + '</ul>' +
+      '<div class="pf-actions"><button type="button" class="btn sm pri" data-view="' + s.id + '">' + svg('eye') + 'Preview</button><button type="button" class="btn sm" data-present="' + s.id + '">' + svg('monitor') + 'Present link</button><button type="button" class="btn sm" data-rebuild="' + s.brief + '">' + svg('send') + 'Rebuild in Pahina</button></div></div>';
+  }).join('') + '<div class="card rv pf-tip"><span class="ico">' + svg('shield') + '</span><h3>Always say "sample"</h3><p class="muted small" style="margin:0">These are concept pages with made-up brands. Present them as sample work, never as past clients. Honesty builds the trust that closes deals.</p></div></div>' +
+  '<div class="sec"><span class="kicker">Make it yours</span><h2>Turn samples into <em class="s">your</em> portfolio</h2><p class="sub">A sample you rebuilt yourself is the strongest proof you can do the work. It takes about 10 minutes each.</p>' +
+  '<div class="cards c2"><div>' +
+    chkHTML('pf1','Pick 3 samples closest to your niche','Clients trust samples that look like their own business.') +
+    chkHTML('pf2','Rebuild each one in Pahina Builder','Tap "Rebuild in Pahina". The brief fills the app for you.') +
+    chkHTML('pf3','Publish each page and save the links','Free hosting on Vercel or Netlify. Keep the links in one note.') +
+    chkHTML('pf4','Add your 3 links to the Script Pack','Use them in the portfolio-first DM.') +
+  '</div><div class="card"><h3>Present like a pro on a call</h3><ol class="pf-ol"><li>Open the <b>Present link</b> before the call, full screen.</li><li>Start with the hero: "This is the first thing your customers see."</li><li>Scroll to prices: "No more answering \'How much?\' all day."</li><li>Show the offer card: "This is where they pay, without waiting for you."</li><li>Switch to mobile view: "And it looks like this on their phone."</li></ol></div></div></div>' +
+  '<div class="sec"><span class="kicker">Ready captions</span><h2>Post your samples with <em class="s">these</em></h2><div class="cards c3" style="margin-top:18px">' + [['fb','Facebook post'],['li','LinkedIn post'],['dm','DM with a sample']].map(function (c) { return '<div class="card rv" data-copy-scope><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h3 style="margin:0">' + c[1] + '</h3>' + copyBtn() + '</div><div class="script small" data-copy-text>' + esc(CAPTIONS[c[0]]) + '</div></div>'; }).join('') + '</div></div>' +
+  '<div class="pf-modal" id="pf-modal" role="dialog" aria-modal="true" aria-label="Sample preview"><div class="pf-bar"><b id="pf-title"></b><div class="seg" id="pf-dev"><button type="button" data-dev="d" class="on">' + svg('monitor', ' style="width:15px;height:15px;vertical-align:-3px"') + ' Desktop</button><button type="button" data-dev="m">' + svg('phone', ' style="width:15px;height:15px;vertical-align:-3px"') + ' Mobile</button></div><button type="button" class="btn sm" id="pf-close">Close</button></div><div class="pf-stage"><div class="pf-frame" id="pf-frame"><iframe id="pf-iframe" title="Sample preview"></iframe></div></div></div>';
+};
+function presentURL(id) { return location.href.split('#')[0] + '#show/' + id; }
+RENDER.portfolio_init = function (v) {
+  var thumbIO = ('IntersectionObserver' in window) ? new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { var f = x.target; f.srcdoc = sampleHTML(SAMPLES.filter(function (s) { return s.id === f.getAttribute('data-sample'); })[0]); thumbIO.unobserve(f); } }); }, { rootMargin:'200px' }) : null;
+  $$('iframe[data-sample]', v).forEach(function (f) { if (thumbIO) thumbIO.observe(f); else f.srcdoc = sampleHTML(SAMPLES.filter(function (s) { return s.id === f.getAttribute('data-sample'); })[0]); });
+  var modal = $('#pf-modal', v);
+  function open(id) {
+    var s = SAMPLES.filter(function (x) { return x.id === id; })[0];
+    $('#pf-title', v).textContent = s.name + ' · ' + s.niche;
+    $('#pf-iframe', v).srcdoc = sampleHTML(s);
+    modal.classList.add('on'); document.body.style.overflow = 'hidden';
+  }
+  function close() { modal.classList.remove('on'); document.body.style.overflow = ''; }
+  v.addEventListener('click', function (e) {
+    var o = e.target.closest('[data-view]'); if (o) { open(o.getAttribute('data-view')); return; }
+    var p = e.target.closest('[data-present]'); if (p) { copyText(presentURL(p.getAttribute('data-present')), p); return; }
+    var r = e.target.closest('[data-rebuild]'); if (r) { sendBrief(r.getAttribute('data-rebuild')); return; }
+    var d = e.target.closest('[data-dev]'); if (d) { $$('#pf-dev button', v).forEach(function (b) { b.classList.toggle('on', b === d); }); $('#pf-frame', v).classList.toggle('m', d.getAttribute('data-dev') === 'm'); return; }
+    if (e.target.id === 'pf-close' || e.target === modal) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('on')) close(); });
+  v.addEventListener('click', function (e) { if (e.target.closest('[data-chk^="pf"]')) { var n = ['pf1','pf2','pf3'].filter(function (k) { return CHK[k]; }).length; if (n === 3 && !CHK.p4) { CHK.p4 = true; store.set('chk', CHK); updateProgress(); } } });
+};
+window.showSample = function (id) {
+  var s = SAMPLES.filter(function (x) { return x.id === id; })[0]; if (!s) { location.hash = '#portfolio'; return; }
+  document.body.classList.add('presenting');
+  var f = document.getElementById('present-frame');
+  if (!f) { f = document.createElement('iframe'); f.id = 'present-frame'; f.title = s.name; document.body.appendChild(f); }
+  f.srcdoc = sampleHTML(s, { badge:true }); document.title = s.name + ' — sample page';
+};
+
+/* ===== Bonus 04: Niche Brief Swipe File ===== */
+var BR_CATS = [['all','All'],['beauty','Beauty and wellness'],['food','Food'],['local','Local services'],['pro','Professionals'],['digital','Digital and online']];
+function B(id, cat, niche, font, style, brand, product, offer, buyer, problem, transform, includes, price, orig, guarantee) {
+  return { id:id, cat:cat, niche:niche, font:font, style:style, brand:brand, product:product, offer:offer, buyer:buyer, problem:problem, transform:transform, includes:includes, price:price, orig:orig, guarantee:guarantee };
+}
+var BRIEFS = [
+B('b-beauty','beauty','Skin clinic','cormorant','Light premium minimal','Lumière Skin Studio','Glass Skin Package','A 4-session Hydrafacial program over 8 weeks for clear, glowing skin, with a free skin consultation and a personal at-home routine. Book online and secure your slot with a ₱500 deposit.','Women 22 to 40 in the city, working professionals, who have tried many skincare products without lasting results.','They waste money on products that do not work. They are unsure which treatment fits their skin. Clinics reply slowly and do not show prices.','Clear, hydrated, glowing skin and a simple routine they understand, without guessing.','1. 4 Signature Hydrafacial sessions\n2. Free skin consultation\n3. Personal at-home routine\n4. Priority booking for 3 months','5999','7996','Free rescheduling up to 24 hours before your slot.'),
+B('b-salon','beauty','Hair salon','script-allura','Soft and warm','Studio Aurora Salon','Color and Treatment Package','Full hair color with a bond-repair treatment and a style finish, done by senior stylists. See prices and book your chair online.','Women 20 to 45 who want a fresh hair color without damage.','Afraid of damaged hair after coloring. Prices change once they are in the chair. Hard to get a slot on weekends.','Healthy, shiny hair in the color they wanted, at the price they saw online.','1. Full hair color\n2. Bond-repair treatment\n3. Haircut and style finish\n4. Free aftercare guide','3499','4200',''),
+B('b-nails','beauty','Nail and lash studio','script-parisienne','Soft and warm','Petal Nail and Lash Bar','Gel Manicure + Classic Lash Set','A pampering session with a gel manicure and classic lash extensions in one visit. Book online and pick your nail artist.','Women 18 to 35 who want to look polished for work and events.','Walk-ins wait too long. Results are inconsistent between artists. Gel chips after a few days.','Clean, long-lasting nails and natural-looking lashes, done in one relaxing visit.','1. Gel manicure with nail art\n2. Classic lash extension set\n3. Free cuticle care\n4. 7-day gel repair guarantee','1299','1600','Free gel repair within 7 days.'),
+B('b-spa','beauty','Massage and spa','cormorant','Luxury editorial','Tahanan Spa','Couples Signature Massage','A 90-minute signature massage for two in a private room with aromatherapy and tea service. Book your preferred time online.','Couples and busy professionals 25 to 50 who need to de-stress.','Body pain from long work hours. Spas are fully booked when they walk in. Unsure of the total price.','Deep relaxation and a calm, private experience they can book in a minute.','1. 90-minute massage for 2\n2. Private couple room\n3. Aromatherapy oils\n4. Tea and warm towel service','2800','3400',''),
+B('b-coach','pro','Fitness coach','bebas','Bold and vibrant','Rise Coaching','12-Week Transformation Program','An online coaching program for busy professionals: a custom training plan, a Pinoy-friendly meal guide and weekly check-ins with a coach.','Men and women 25 to 45 with office jobs who want to lose fat and get stronger.','Generic programs do not fit their schedule. Strict diets are impossible to follow. They lose motivation without accountability.','Stronger, leaner and more confident in 12 weeks, with habits that last.','1. Custom training plan (home or gym)\n2. Pinoy-friendly meal guide and grocery list\n3. 12 weekly coach check-ins\n4. Private member chat','9997','',''),
+B('b-life','pro','Business or life coach','mix-inter-instrument','Light premium minimal','Clarity with Coach Ana','90-Day Clarity Coaching','One-on-one coaching for professionals who feel stuck: 6 private sessions, a personal action plan and chat support between calls.','Professionals and new entrepreneurs 28 to 45 who want direction in career or business.','They feel stuck and overwhelmed. They start many plans and finish none. They have no one objective to talk to.','A clear 90-day plan, steady progress every week and confidence in their next move.','1. 6 private coaching sessions\n2. Personal 90-day action plan\n3. Chat support between calls\n4. Session recordings','15000','',''),
+B('b-realty','pro','Real estate agent','baskerville','Luxury editorial','Marco Reyes Realty','Pre-selling Condo Viewing','Book a free viewing of a pre-selling condo near the business district, with flexible payment terms and a sample computation.','OFWs and young professionals 28 to 45 looking for a first home or investment.','Afraid of hidden fees. Confused by payment terms. Agents are pushy and slow to answer questions.','A clear picture of the price, monthly payments and next steps, with no pressure.','1. Free site or virtual viewing\n2. Sample computation for your budget\n3. Assistance with bank or in-house financing\n4. Reservation guide','','',''),
+B('b-dental','local','Dental clinic','plus-jakarta','Light premium minimal','BrightSmile Dental Care','New Patient Cleaning Package','A complete first visit: consultation, oral prophylaxis and fluoride treatment with a gentle dentist. Book your appointment online.','Adults 20 to 50 and parents who have not seen a dentist in over a year.','Fear of pain. Fear of surprise costs. Hard to find a schedule that fits.','A clean, fresh smile and a clear treatment plan, at a price they knew beforehand.','1. Dental consultation\n2. Oral prophylaxis (cleaning)\n3. Fluoride treatment\n4. Personal treatment plan','1500','2200',''),
+B('b-resort','local','Beach resort','luxury-editorial','Light premium minimal','Alon Bay Resort','Weekend Escape for 2','Two nights in an Ocean Suite at a quiet beachfront resort two hours from Manila, with daily breakfast and free kayak use. Book direct for the best rate.','Couples and young families from Metro Manila who want a relaxing weekend.','Booking sites add fees. Resorts reply slowly. Photos online do not match reality.','A calm, stress-free weekend by the sea, booked in minutes at a clear price.','1. 2 nights in an Ocean Suite\n2. Breakfast for 2 daily\n3. Kayak and paddleboard use\n4. Late check-out, subject to availability','12900','14600','Move your dates once for free, up to 7 days before arrival.'),
+B('b-photo','local','Photographer','mix-playfair-allura','Luxury editorial','Luna Frames Photography','Prenup Photo Package','A half-day prenup shoot with two locations, professional styling guidance and 60 edited photos delivered in an online gallery.','Engaged couples 24 to 35 planning their wedding.','Stiff, awkward photos. Unclear packages and add-on fees. Late delivery of photos.','Natural, timeless photos they are proud to share, delivered on time.','1. Half-day shoot, 2 locations\n2. 60 edited high-resolution photos\n3. Online gallery\n4. Styling and pose guidance','18000','22000',''),
+B('b-clean','local','Home cleaning service','manrope','Light premium minimal','FreshNest Cleaning','Deep Home Cleaning','A top-to-bottom deep clean for condos and houses by a trained 3-person team with complete equipment. Book a date online.','Busy professionals and parents 28 to 50 in the city.','No time to clean. Worry about strangers at home. Previous cleaners missed spots.','A spotless, fresh home in one visit, and their weekend back.','1. 3-person trained team\n2. Kitchen and bathroom deep clean\n3. Floors, windows and upholstery vacuum\n4. Eco-friendly supplies included','2999','3800','If we miss a spot, we come back and fix it for free within 48 hours.'),
+B('b-events','local','Event stylist','script-greatvibes','Soft and warm','Bloom and Bow Events','Birthday Styling Package','A complete birthday setup with a themed backdrop, balloon styling, dessert table and setup crew. Check your date online.','Parents 25 to 40 planning a child\'s birthday party.','Too many suppliers to coordinate. Setups that look different from the peg. Hidden transport fees.','A beautiful party that looks like the picture, with zero stress on the day.','1. Themed backdrop\n2. Balloon styling\n3. Dessert table setup\n4. Setup and pack-up crew','8500','10000',''),
+B('b-food','food','Cafe and catering','fraunces','Soft and warm','Kape Kanto','Party Bundle for 30','Three freshly cooked party trays with free calamansi juice for 30 people. Pre-order online for pickup or delivery.','Families and office teams planning a celebration.','Cooking for a crowd takes the whole day. Caterers reply slowly. Worry that food will run out.','Hot, delicious food that arrives on time, so they can enjoy the party.','1. Pancit Bihon tray\n2. Baked Macaroni tray\n3. Chicken Pastel tray\n4. Free calamansi juice for 30','4999','5750',''),
+B('b-cake','food','Home baker','script-dancing','Soft and warm','Sweet Crumbs by Jas','Custom Celebration Cake','A custom 8-inch celebration cake baked fresh to order, with your chosen flavor and design. Order online at least 3 days ahead.','Parents, partners and friends 22 to 45 celebrating birthdays and milestones.','Cakes that look good but taste dry. Bakers who are fully booked. Unclear prices for custom designs.','A cake that looks like the peg and tastes even better.','1. 8-inch custom cake\n2. Choice of 6 flavors\n3. Custom message topper\n4. Free candle set','1850','',''),
+B('b-meal','food','Meal prep service','outfit','Bold and vibrant','FitBox Meals','5-Day Meal Plan','Chef-cooked, calorie-counted meals for 5 days, delivered fresh. Choose your goal and order online.','Busy professionals 24 to 40 who want to eat healthier.','No time to cook. Healthy food that tastes bland. Diets that are hard to keep.','Tasty, healthy meals ready to eat, and steady progress toward their goal.','1. 15 meals (lunch, dinner, snack for 5 days)\n2. Calorie-counted menu\n3. Free delivery within the city\n4. Weekly rotating menu','2450','',''),
+B('b-digital','digital','Digital planner','mix-inter-instrument','Dark high-tech','FocusOS','FocusOS Complete Planner','A digital planning system for freelancers and VAs: weekly planner, client tracker and focus timer in one Notion template, plus a printable PDF.','Freelancers and virtual assistants 22 to 38 handling several clients.','They work all day but big tasks do not move. Deadlines are scattered across apps. Planning takes too long.','A clear weekly plan in 15 minutes and the calm of knowing nothing is forgotten.','1. FocusOS Notion template\n2. Printable PDF planner\n3. Quick-start video guide\n4. Free lifetime updates','499','999',''),
+B('b-course','digital','Online course','space-grotesk','Dark high-tech','Canva Pro Creator Academy','Canva for Social Media Managers','A self-paced course that teaches social media managers to design scroll-stopping posts in Canva, with templates and client-ready workflows.','Aspiring and beginner social media managers 20 to 35.','Designs that look amateur. Slow turnaround for clients. Low rates because the portfolio is weak.','Professional designs made fast, a stronger portfolio and the confidence to charge more.','1. 24 video lessons\n2. 100 editable Canva templates\n3. Client workflow checklist\n4. Certificate of completion','1497','2997','7-day refund if you finish module 1 and feel it is not for you.'),
+B('b-ebook','digital','Ebook or guide','lora-inter','Light premium minimal','The Ipon Blueprint','The Ipon Blueprint Ebook','A practical ebook that shows young Filipino earners how to budget, build an emergency fund and start investing, with a ready budget tracker.','Young professionals 21 to 32 on their first few jobs.','Salary runs out before payday. No emergency fund. Investing feels confusing.','A simple money system, first savings milestone and less stress every payday.','1. 120-page ebook (PDF)\n2. Budget tracker spreadsheet\n3. 30-day savings challenge\n4. Free updates','299','499',''),
+B('b-seller','digital','Online seller (physical product)','montserrat','Bold and vibrant','GlowDrop','Vitamin C Glow Serum','A lightweight vitamin C serum for dull skin and dark spots. Cash on delivery nationwide, with a bundle price for 2 bottles.','Women 18 to 35 who shop skincare online.','Dull, uneven skin. Fake products from unknown sellers. Expensive branded serums.','Brighter, more even skin from an authentic product at a fair price.','1. 30ml Vitamin C Glow Serum\n2. Usage guide\n3. Free shipping for 2 bottles\n4. Cash on delivery','399','599',''),
+B('b-va','digital','Freelancer or VA service','mix-jakarta-playfair','Dark high-tech','Sales Funnels by [Your name]','Growth Funnel Package','A complete sales funnel for small businesses: sales page, checkout, booking and an AI chatbot, delivered in about 5 working days.','Small business owners and coaches who sell through Facebook and Messenger.','They answer the same price questions all day. Inquiries do not turn into sales. They have no time or skill to build a website.','One link that explains the offer, takes bookings or payments and answers questions 24/7.','1. High-converting sales page\n2. Checkout and payment setup\n3. Online booking system\n4. AI chatbot\n5. 2 rounds of revisions','15000','','')
+];
+function b64u(str) { return btoa(unescape(encodeURIComponent(str))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
+function sendBrief(id) {
+  var b = BRIEFS.filter(function (x) { return x.id === id; })[0]; if (!b) return;
+  var payload = { v:1, brand:b.brand, product:b.product, offer:b.offer, buyer:b.buyer, problem:b.problem, transform:b.transform, includes:b.includes, price:b.price, origprice:b.orig, guarantee:b.guarantee, font:b.font };
+  window.open(PAHINA_APP_URL + '#fcbrief=' + b64u(JSON.stringify(payload)), '_blank', 'noopener');
+  toast('Opening Pahina Builder with this brief');
+  if (!CHK.p3) { CHK.p3 = true; store.set('chk', CHK); updateProgress(); }
+}
+var BRF = [['brand','Brand name'],['product','Product or main service'],['offer','Offer details'],['buyer','Ideal buyer'],['problem','Buyer problems'],['transform','Transformation'],['includes','What is included'],['price','Selling price'],['orig','Original price'],['guarantee','Guarantee']];
+var BR = { cat:'all', q:'', open:'' };
+RENDER.briefs = function () {
+  return '' +
+  '<span class="eyebrow"><i></i>Bonus 04 · Swipe file</span>' +
+  '<h1>Your first funnel, <em class="s">already</em> written.</h1>' +
+  '<p class="lead">20 complete business briefs that match the Pahina Builder fields. Send one to the app in a click, press Generate, and you have a portfolio piece in minutes.</p>' +
+  '<div class="cards c3" style="margin-top:28px">' + [['send','1. Pick a brief','Choose the niche you want to sell to.'],['bolt','2. Send to Pahina','The fields fill themselves, font included.'],['spark','3. Generate and edit','Swap in your client\'s real details later.']].map(function (s) { return '<div class="card rv"><span class="ico">' + svg(s[0]) + '</span><h3>' + s[1] + '</h3><p class="muted small" style="margin:0">' + s[2] + '</p></div>'; }).join('') + '</div>' +
+  '<div class="sec" style="margin-top:36px"><div class="br-tools"><div class="br-search">' + svg('search') + '<input class="inp" id="br-q" type="search" placeholder="Search a niche, e.g. salon, resort, course" aria-label="Search briefs"></div><div class="chips" id="br-cats"></div></div><div id="br-list" class="br-list"></div><p class="tiny muted" style="margin-top:14px">Brands, prices and details are made-up examples. Replace them with your client\'s real information before publishing.</p></div>';
+};
+RENDER.briefs_init = function (v) {
+  function cats() { $('#br-cats', v).innerHTML = BR_CATS.map(function (c) { return '<button type="button" class="chip' + (BR.cat === c[0] ? ' on' : '') + '" data-bcat="' + c[0] + '">' + c[1] + '</button>'; }).join(''); }
+  function list() {
+    var q = BR.q.toLowerCase();
+    var items = BRIEFS.filter(function (b) { return (BR.cat === 'all' || b.cat === BR.cat) && (!q || (b.niche + ' ' + b.brand + ' ' + b.product + ' ' + b.offer).toLowerCase().indexOf(q) > -1); });
+    $('#br-list', v).innerHTML = items.length ? items.map(function (b) {
+      var open = BR.open === b.id;
+      return '<div class="card br-item' + (open ? ' open' : '') + '" id="' + b.id + '"><div class="br-head"><div style="min-width:0"><span class="pill acc">' + b.niche + '</span><h3 style="margin:8px 0 2px">' + esc(b.product) + '</h3><p class="tiny muted" style="margin:0">' + esc(b.brand) + (b.price ? ' · ' + peso(+b.price) : '') + ' · Style: ' + b.style + '</p></div><div class="br-actions"><button type="button" class="btn sm" data-bopen="' + b.id + '">' + (open ? 'Hide' : 'View brief') + '</button><button type="button" class="btn sm pri" data-bsend="' + b.id + '">' + svg('send') + 'Send to Pahina</button></div></div>' +
+        (open ? '<div class="br-body">' + BRF.filter(function (f) { return b[f[0]]; }).map(function (f) { return '<div class="br-f" data-copy-scope><div class="br-fl"><span>' + f[1] + '</span>' + copyBtn() + '</div><div class="br-fv" data-copy-text>' + esc(f[0] === 'price' || f[0] === 'orig' ? b[f[0]] : b[f[0]]) + '</div></div>'; }).join('') + '<div style="margin-top:12px"><button type="button" class="btn sm" data-ball="' + b.id + '">' + svg('copy') + 'Copy the whole brief</button></div></div>' : '') + '</div>';
+    }).join('') : '<div class="card"><p class="muted" style="margin:0">No brief matches that search. Try a broader word, or pick the closest niche and edit it.</p></div>';
+  }
+  v.addEventListener('click', function (e) {
+    var c = e.target.closest('[data-bcat]'); if (c) { BR.cat = c.getAttribute('data-bcat'); cats(); list(); return; }
+    var o = e.target.closest('[data-bopen]'); if (o) { var id = o.getAttribute('data-bopen'); BR.open = BR.open === id ? '' : id; list(); return; }
+    var s = e.target.closest('[data-bsend]'); if (s) { sendBrief(s.getAttribute('data-bsend')); return; }
+    var a = e.target.closest('[data-ball]'); if (a) { var b = BRIEFS.filter(function (x) { return x.id === a.getAttribute('data-ball'); })[0]; copyText(BRF.filter(function (f) { return b[f[0]]; }).map(function (f) { return f[1].toUpperCase() + ':\n' + b[f[0]]; }).join('\n\n'), a); }
+  });
+  $('#br-q', v).addEventListener('input', function () { BR.q = this.value; list(); });
+  cats(); list();
+};
+
+
+/* thumbnails scale to their card */
+function fitThumbs(){ $$('.pf-thumb').forEach(function(t){ var f=t.querySelector('iframe'); if(f) f.style.transform='scale('+(t.clientWidth/1280)+')'; }); }
+window.addEventListener('resize', fitThumbs);
+var _r = route; route = function(){ _r(); setTimeout(fitThumbs, 30); };
+window.removeEventListener('hashchange', _r); window.addEventListener('hashchange', route);
+buildNav(); route();
+
+</script>
+</body>
+</html>
